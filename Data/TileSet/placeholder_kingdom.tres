@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" format=3 uid="uid://dylal06ntukho"]
+
+[ext_resource type="Resource" uid="uid://hq12i3pflt8v" path="res://Data/Resources/paper_kingdom.tres" id="1_bko50"]
+[ext_resource type="Resource" uid="uid://bnmptrbp64vei" path="res://Data/Resources/cat_kingdom.tres" id="1_j5k6m"]
+[ext_resource type="Texture2D" uid="uid://dygjty0dpff2c" path="res://Assets/Tileset/placeholder_tileset.png" id="1_tmxd6"]
+[ext_resource type="Resource" uid="uid://byfnl1eb56cuy" path="res://Data/Resources/moon_kingdom.tres" id="3_cbndl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bko50"]
+texture = ExtResource("1_tmxd6")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/custom_data_0 = ExtResource("1_j5k6m")
+1:0/0 = 0
+1:0/0/custom_data_0 = ExtResource("3_cbndl")
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_0 = ExtResource("1_bko50")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+custom_data_layer_0/name = "kingdom_data"
+custom_data_layer_0/type = 24
+sources/0 = SubResource("TileSetAtlasSource_bko50")

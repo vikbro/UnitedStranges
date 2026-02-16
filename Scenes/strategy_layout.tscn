@@ -1,0 +1,136 @@
+[gd_scene format=4 uid="uid://5vpn8a35rpd1"]
+
+[ext_resource type="TileSet" uid="uid://dylal06ntukho" path="res://Data/TileSet/placeholder_kingdom.tres" id="1_othr5"]
+[ext_resource type="Script" uid="uid://2yg4dko2felc" path="res://Data/Components/play_area.gd" id="2_itj6s"]
+[ext_resource type="Script" uid="uid://dd2y46jg54x0p" path="res://Data/Components/kingdom_grid.gd" id="3_itj6s"]
+[ext_resource type="Script" uid="uid://c1tner2fuuuav" path="res://Data/Components/tile_highlighter.gd" id="4_culq7"]
+[ext_resource type="Script" uid="uid://btt5do33u622f" path="res://Data/Components/allegiance_highlighter.gd" id="5_p0iyg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_itj6s"]
+font_size = 21
+font_color = Color(1, 1, 0, 1)
+
+[node name="StrategyLayout" type="Node2D" unique_id=999189916]
+
+[node name="Visuals" type="Node2D" parent="." unique_id=322619196]
+
+[node name="Background" type="TileMapLayer" parent="Visuals" unique_id=709468484]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAABAAQAAAACAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAADAAQAAAACAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAAEAAMAAAACAAAAAAAEAAQAAAACAAAAAAAFAAAAAAACAAAAAAAFAAEAAAACAAAAAAAFAAIAAAACAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAGAAAAAAACAAAAAAAGAAEAAAACAAAAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAACAAAAAAAHAAAAAAACAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAACAAAAAAAHAAQAAAACAAAAAAAIAAAAAAACAAAAAAAIAAEAAAACAAAAAAAIAAIAAAACAAAAAAAIAAMAAAACAAAAAAAIAAQAAAACAAAAAAAAAAUAAAACAAAAAAABAAUAAAACAAAAAAACAAUAAAACAAAAAAADAAUAAAACAAAAAAAEAAUAAAACAAAAAAAFAAUAAAACAAAAAAAGAAUAAAACAAAAAAAHAAUAAAACAAAAAAAIAAUAAAACAAAAAAA=")
+tile_set = ExtResource("1_othr5")
+
+[node name="KingdomArea" type="TileMapLayer" parent="." unique_id=1889909057 node_paths=PackedStringArray("kingdom_grid")]
+position = Vector2(128, 128)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAACAAEAAAAAAAEAAAADAAEAAAABAAAAAAABAAEAAAAAAAEAAAA=")
+tile_set = ExtResource("1_othr5")
+script = ExtResource("2_itj6s")
+kingdom_grid = NodePath("ArenaKingdomGrid")
+metadata/_edit_lock_ = true
+
+[node name="ArenaKingdomGrid" type="Node2D" parent="KingdomArea" unique_id=555608236 node_paths=PackedStringArray("kingdom_tiles")]
+script = ExtResource("3_itj6s")
+size = Vector2i(7, 3)
+kingdom_tiles = NodePath("..")
+
+[node name="AllegienceHighlight" type="TileMapLayer" parent="KingdomArea" unique_id=1496859559]
+tile_set = ExtResource("1_othr5")
+
+[node name="Highlight" type="TileMapLayer" parent="KingdomArea" unique_id=49622691]
+tile_set = ExtResource("1_othr5")
+
+[node name="TileHighlighter" type="Node" parent="KingdomArea" unique_id=1968781856 node_paths=PackedStringArray("play_area", "highlight_layer")]
+script = ExtResource("4_culq7")
+play_area = NodePath("..")
+highlight_layer = NodePath("../Highlight")
+tile = Vector2i(3, 0)
+
+[node name="AllegienceHighlighter" type="Node" parent="KingdomArea" unique_id=1937623265 node_paths=PackedStringArray("play_area", "highlight_layer")]
+script = ExtResource("5_p0iyg")
+play_area = NodePath("..")
+highlight_layer = NodePath("../AllegienceHighlight")
+friend_tile = Vector2i(2, 1)
+enemy_tile = Vector2i(3, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269338331]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2038055597]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1897599764]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1994137296]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Local Mouse"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1824213012]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Global mouse"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=645247795]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Tile from global"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=363005404]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Hovered tile"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=461619693]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "In Bounds"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1139533430]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Global from tile"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1148879548]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1801007070]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=778872182]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1020446404]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1376751437]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=480025696]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")
+
+[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=440821982]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_itj6s")

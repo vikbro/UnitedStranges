@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="KingdomStats" format=3 uid="uid://hq12i3pflt8v"]
+
+[ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="1_ace4g"]
+[ext_resource type="Texture2D" uid="uid://dgn3us7assr64" path="res://Assets/Diplomats/Paper_kingdom.png" id="1_f4kph"]
+[ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="2_na70k"]
+
+[resource]
+script = ExtResource("1_ace4g")
+likes = Array[int]([2])
+dislikes = Array[int]([1])
+diplomat_img = ExtResource("2_na70k")
+background_img = ExtResource("1_f4kph")
+metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"
