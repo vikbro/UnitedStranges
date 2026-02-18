@@ -6,9 +6,10 @@
 
 [resource]
 script = ExtResource("3_c7bff")
-kingdom_type = 2
-likes = Array[int]([1])
-dislikes = Array[int]([0])
+kingdom_type = 3
+opinions = Dictionary[int, int]({
+1: 76
+})
 diplomat_img = ExtResource("2_nm3xa")
 background_img = ExtResource("1_ikm3c")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

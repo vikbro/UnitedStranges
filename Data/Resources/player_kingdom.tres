@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="KingdomStats" format=3 uid="uid://ci7s30u6ympdr"]
+
+[ext_resource type="Texture2D" uid="uid://dgn3us7assr64" path="res://Assets/Diplomats/Paper_kingdom.png" id="1_2gicg"]
+[ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="2_ib0n7"]
+[ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="3_mu8nw"]
+
+[resource]
+script = ExtResource("3_mu8nw")
+diplomat_img = ExtResource("2_ib0n7")
+background_img = ExtResource("1_2gicg")
+metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

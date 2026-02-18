@@ -53,9 +53,16 @@ func _update_all_tiles() -> void:
 	# Iterate over every tile that has a kingdom
 	for tile: Vector2i in play_area.current_kingdoms.keys():
 		var tile_kingdom: KingdomStats = play_area.current_kingdoms[tile]
-		
-		if tile_kingdom.kingdom_type in selected_kingdom.likes:
-			highlight_layer.set_cell(tile, source_id, friend_tile)
-		elif tile_kingdom.kingdom_type in selected_kingdom.dislikes:
+		if tile_kingdom.kingdom_type == selected_kingdom.kingdom_type:
+			continue
+		var tile_allegience := selected_kingdom.get_allegience(tile_kingdom.kingdom_type)
+		if tile_allegience == KingdomStats.AllegienceType.ENEMY || tile_allegience == KingdomStats.AllegienceType.DISLIKE :
 			highlight_layer.set_cell(tile, source_id, enemy_tile)
+		elif tile_allegience == KingdomStats.AllegienceType.LIKE || tile_allegience == KingdomStats.AllegienceType.ALLY :
+			highlight_layer.set_cell(tile, source_id, friend_tile)
+		#
+		#if tile_kingdom.kingdom_type in selected_kingdom.likes:
+			#highlight_layer.set_cell(tile, source_id, friend_tile)
+		#elif tile_kingdom.kingdom_type in selected_kingdom.dislikes:
+			#highlight_layer.set_cell(tile, source_id, enemy_tile)
 		# If neutral, no highlight is placed (already cleared)

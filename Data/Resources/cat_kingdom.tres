@@ -6,9 +6,7 @@
 
 [resource]
 script = ExtResource("3_ltx3n")
-kingdom_type = 1
-likes = Array[int]([0])
-dislikes = Array[int]([2])
+kingdom_type = 2
 diplomat_img = ExtResource("2_8h44n")
 background_img = ExtResource("1_6kf84")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

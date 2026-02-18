@@ -14,9 +14,11 @@ func _ready() -> void:
 		if data != null:
 			var kingdom_data = data.get_custom_data("kingdom_data")
 			add_kingdom(cell, kingdom_data)
+			
 
 func add_kingdom(tile: Vector2i, kingdom: KingdomStats ) -> void:
 	current_kingdoms[tile] = kingdom
+	DiplomacyManager.insert_kingdom(kingdom)
 	#kingdom_grid_changed.emit()
 
 func _process(delta: float) -> void:
@@ -26,6 +28,8 @@ func _process(delta: float) -> void:
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label4".text = str(get_hovered_tile())
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label5".text = str(is_tile_in_bounds(get_hovered_tile()))
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label6".text = str(get_global_from_tile(get_hovered_tile()))
+	if current_kingdoms.has(get_hovered_tile()) == true:
+		$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label7".text = str(current_kingdoms[get_hovered_tile()])
 
 func get_tile_from_global(global: Vector2) -> Vector2i:
 	return local_to_map(to_local(global))

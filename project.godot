@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+DiplomacyManager="*uid://dtw0ogcq34jq0"
+Events="*uid://c6vpu2ynyo0qs"
 
 [dialogic]
 
@@ -33,6 +35,10 @@ layout/style_list=[]
 layout/default_style="Default"
 variables={}
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
@@ -41,6 +47,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 folder_colors={
 "res://Assets/": "blue",
+"res://Audio/": "pink",
 "res://Data/": "gray",
 "res://Dialogic/": "purple",
 "res://Globals/": "red",

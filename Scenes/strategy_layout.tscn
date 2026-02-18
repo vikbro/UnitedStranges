@@ -5,23 +5,20 @@
 [ext_resource type="Script" uid="uid://dd2y46jg54x0p" path="res://Data/Components/kingdom_grid.gd" id="3_itj6s"]
 [ext_resource type="Script" uid="uid://c1tner2fuuuav" path="res://Data/Components/tile_highlighter.gd" id="4_culq7"]
 [ext_resource type="Script" uid="uid://btt5do33u622f" path="res://Data/Components/allegiance_highlighter.gd" id="5_p0iyg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_itj6s"]
-font_size = 21
-font_color = Color(1, 1, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://hj6mjei6qcw2" path="res://Data/Label/debug_label.tres" id="6_rs4nu"]
+[ext_resource type="Script" uid="uid://c1jpvr0ejg48t" path="res://Scripts/debug_ui.gd" id="7_53vkc"]
 
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 
 [node name="Visuals" type="Node2D" parent="." unique_id=322619196]
 
 [node name="Background" type="TileMapLayer" parent="Visuals" unique_id=709468484]
-visible = false
-tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAABAAQAAAACAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAADAAQAAAACAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAAEAAMAAAACAAAAAAAEAAQAAAACAAAAAAAFAAAAAAACAAAAAAAFAAEAAAACAAAAAAAFAAIAAAACAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAGAAAAAAACAAAAAAAGAAEAAAACAAAAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAACAAAAAAAHAAAAAAACAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAACAAAAAAAHAAQAAAACAAAAAAAIAAAAAAACAAAAAAAIAAEAAAACAAAAAAAIAAIAAAACAAAAAAAIAAMAAAACAAAAAAAIAAQAAAACAAAAAAAAAAUAAAACAAAAAAABAAUAAAACAAAAAAACAAUAAAACAAAAAAADAAUAAAACAAAAAAAEAAUAAAACAAAAAAAFAAUAAAACAAAAAAAGAAUAAAACAAAAAAAHAAUAAAACAAAAAAAIAAUAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAIAAAAAAAIAAAAEAAIAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAIAAAABAAAAAAAEAAIAAAABAAIAAAAEAAAAAAABAAMAAAAEAAAAAAABAAQAAAAEAAIAAAACAAAAAAAEAAIAAAACAAIAAAAEAAAAAAACAAMAAAAEAAAAAAACAAQAAAAEAAIAAAADAAAAAAAEAAIAAAADAAIAAAAEAAAAAAADAAMAAAAEAAAAAAADAAQAAAAEAAIAAAAEAAIAAAAEAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAIAAAAFAAAAAAAEAAIAAAAFAAEAAAAEAAAAAAAFAAIAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAIAAAAGAAAAAAAEAAIAAAAGAAEAAAAEAAAAAAAGAAIAAAAEAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAIAAAAHAAAAAAAEAAIAAAAHAAEAAAAEAAAAAAAHAAIAAAAEAAAAAAAHAAMAAAAEAAAAAAAHAAQAAAAEAAIAAAAIAAAAAAAEAAIAAAAIAAEAAAAEAAIAAAAIAAIAAAAEAAIAAAAIAAMAAAAEAAIAAAAIAAQAAAAEAAIAAAAAAAUAAAAEAAEAAAABAAUAAAAEAAEAAAACAAUAAAAEAAEAAAADAAUAAAAEAAEAAAAEAAUAAAAEAAEAAAAFAAUAAAAEAAEAAAAGAAUAAAAEAAEAAAAHAAUAAAAEAAEAAAAIAAUAAAAEAAEAAAAEAAAAAAAEAAIAAAABAAEAAAAEAAAAAAAAAAEAAAAEAAIAAAACAAEAAAAEAAAAAAADAAEAAAAEAAAAAAAEAAEAAAAEAAAAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAEAAAD//wUAAAAEAAEAAAD//wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAEAAAD///7/AAAEAAEAAAAAAP7/AAAEAAEAAAABAP7/AAAEAAEAAAACAP7/AAAEAAEAAAADAP7/AAAEAAEAAAAEAP7/AAAEAAEAAAAEAP//AAAEAAEAAAAFAP//AAAEAAEAAAAGAP//AAAEAAEAAAAHAP//AAAEAAEAAAAIAP//AAAEAAEAAAAJAP//AAAEAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAHAP7/AAAEAAEAAAAGAP7/AAAEAAEAAAAFAP7/AAAEAAEAAAACAP//AAAEAAEAAAADAP//AAAEAAEAAAABAP//AAAEAAEAAAAAAP//AAAEAAEAAAD+////AAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD8//7/AAAEAAEAAAD+//7/AAAEAAEAAAD8////AAAEAAEAAAD8/wAAAAAEAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD+/wEAAAAEAAEAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAEAAAD8/wIAAAAEAAEAAAD8/wMAAAAEAAEAAAD8/wQAAAAEAAEAAAD8/wUAAAAEAAEAAAD9/wIAAAAEAAEAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD9/wUAAAAEAAEAAAD+/wQAAAAEAAEAAAD+/wUAAAAEAAEAAAD8/wYAAAAEAAEAAAD8/wcAAAAEAAEAAAD9/wYAAAAEAAEAAAD9/wcAAAAEAAEAAAD+/wYAAAAEAAEAAAD+/wcAAAAEAAEAAAD//wYAAAAEAAEAAAD//wcAAAAEAAEAAAD8/wgAAAAEAAEAAAD9/wgAAAAEAAEAAAD+/wgAAAAEAAEAAAD//wgAAAAEAAEAAAAAAAYAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAgAAAAEAAEAAAABAAYAAAAEAAEAAAABAAcAAAAEAAEAAAABAAgAAAAEAAEAAAACAAYAAAAEAAEAAAACAAcAAAAEAAEAAAACAAgAAAAEAAEAAAADAAYAAAAEAAEAAAADAAcAAAAEAAEAAAADAAgAAAAEAAEAAAAEAAYAAAAEAAEAAAAEAAcAAAAEAAEAAAAEAAgAAAAEAAEAAAAFAAYAAAAEAAEAAAAFAAcAAAAEAAEAAAAFAAgAAAAEAAEAAAAGAAYAAAAEAAEAAAAGAAcAAAAEAAEAAAAGAAgAAAAEAAEAAAAHAAYAAAAEAAEAAAAHAAcAAAAEAAEAAAAHAAgAAAAEAAEAAAAIAAYAAAAEAAEAAAAIAAcAAAAEAAEAAAAIAAgAAAAEAAEAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAAJAAgAAAAEAAEAAAAKAAUAAAAEAAEAAAAKAAYAAAAEAAEAAAAKAAcAAAAEAAEAAAAKAAgAAAAEAAEAAAALAAUAAAAEAAEAAAALAAYAAAAEAAEAAAALAAcAAAAEAAEAAAALAAgAAAAEAAEAAAAMAAUAAAAEAAEAAAAMAAYAAAAEAAEAAAAMAAcAAAAEAAEAAAAMAAgAAAAEAAEAAAAJAP3/AAAEAAEAAAAKAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAAKAP//AAAEAAEAAAAKAAAAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAIAAAAEAAEAAAAKAAMAAAAEAAEAAAAKAAQAAAAEAAEAAAALAP3/AAAEAAEAAAALAP7/AAAEAAEAAAALAP//AAAEAAEAAAALAAAAAAAEAAEAAAALAAEAAAAEAAEAAAALAAIAAAAEAAEAAAALAAMAAAAEAAEAAAALAAQAAAAEAAEAAAAMAP3/AAAEAAEAAAAMAP7/AAAEAAEAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAEAAAAMAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAEAAAAJAPz/AAAEAAEAAAAKAPz/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAD8//z/AAAEAAEAAAD8//3/AAAEAAEAAAD9//z/AAAEAAEAAAD9//3/AAAEAAEAAAD+//z/AAAEAAEAAAD+//3/AAAEAAEAAAD///z/AAAEAAEAAAD///3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAP3/AAAEAAEAAAABAPz/AAAEAAEAAAABAP3/AAAEAAEAAAACAPz/AAAEAAEAAAACAP3/AAAEAAEAAAADAPz/AAAEAAEAAAADAP3/AAAEAAEAAAAEAPz/AAAEAAEAAAAEAP3/AAAEAAEAAAAFAPz/AAAEAAEAAAAFAP3/AAAEAAEAAAAGAPz/AAAEAAEAAAAGAP3/AAAEAAEAAAAHAPz/AAAEAAEAAAAHAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAP3/AAAEAAEAAAA=")
 tile_set = ExtResource("1_othr5")
 
 [node name="KingdomArea" type="TileMapLayer" parent="." unique_id=1889909057 node_paths=PackedStringArray("kingdom_grid")]
 position = Vector2(128, 128)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAACAAEAAAAAAAEAAAADAAEAAAABAAAAAAABAAEAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAEAAEAAAAAAAIAAAA=")
 tile_set = ExtResource("1_othr5")
 script = ExtResource("2_itj6s")
 kingdom_grid = NodePath("ArenaKingdomGrid")
@@ -64,37 +61,43 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Local Mouse"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1824213012]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Global mouse"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
+
+[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1008417428]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Kingdom:"
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=645247795]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Tile from global"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=363005404]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Hovered tile"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=461619693]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "In Bounds"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1139533430]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Global from tile"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1148879548]
 layout_mode = 2
@@ -103,34 +106,114 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=778872182]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
+
+[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=711312469]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1020446404]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1376751437]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=480025696]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
 
 [node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=440821982]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_itj6s")
+label_settings = ExtResource("6_rs4nu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1855277546]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -765.0
+offset_bottom = 85.0
+grow_horizontal = 0
+script = ExtResource("7_53vkc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1683808039]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1777218121]
+layout_mode = 2
+text = "Opinion of:"
+label_settings = ExtResource("6_rs4nu")
+
+[node name="OpinionOf" type="ItemList" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1435438438]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_width = true
+item_count = 4
+item_0/text = "Player"
+item_1/text = "Paper"
+item_2/text = "Cat"
+item_3/text = "Moon"
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=420483204]
+layout_mode = 2
+text = "About:"
+label_settings = ExtResource("6_rs4nu")
+
+[node name="OpinionAbout" type="ItemList" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1841694897]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_width = true
+item_count = 4
+item_0/text = "Player"
+item_1/text = "Paper"
+item_2/text = "Cat"
+item_3/text = "Moon"
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1085413736]
+layout_mode = 2
+text = "Change with:"
+label_settings = ExtResource("6_rs4nu")
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=3792158]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="SubmitBtn" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1476191155]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Apply oppinion"
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=2126742160]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="DiplomacyButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2029408270]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Activate Dimpolacy"
+
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/HBoxContainer/OpinionOf" to="CanvasLayer/VBoxContainer" method="_on_opinion_of_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/HBoxContainer/OpinionAbout" to="CanvasLayer/VBoxContainer" method="_on_opinion_about_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/TextEdit" to="CanvasLayer/VBoxContainer" method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/SubmitBtn" to="CanvasLayer/VBoxContainer" method="_on_submit_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/DiplomacyButton" to="CanvasLayer/VBoxContainer" method="_on_diplomacy_button_pressed"]
