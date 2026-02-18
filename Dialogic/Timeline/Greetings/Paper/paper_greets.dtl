@@ -1,0 +1,10 @@
+label paper_friendly_greet
+king_paper: HELLO MY FRIEND!
+return
+label paper_anoyed_greet
+king_paper: Hello
+return
+label paper_neutral_greet
+king_paper: [speed=0.1] UGH / [speed]
+king_paper: HI
+return

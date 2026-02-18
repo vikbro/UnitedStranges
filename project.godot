@@ -24,16 +24,27 @@ Events="*uid://c6vpu2ynyo0qs"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://Dialogic/Character/character.dch"
+"king_paper": "res://Data/Style/Dialogue/king_paper.dch"
 }
 directories/dtl_directory={
-"hate_event": "res://Dialogic/Timeline/hate_event.dtl"
+"paper_dialogue": "res://Dialogic/Timeline/Greetings/Paper/paper_dialogue.dtl",
+"paper_greets": "res://Dialogic/Timeline/Greetings/Paper/paper_greets.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Data/Style/Dialogue/dialogue_style.tres",
+"dialogue_style": "res://Data/Style/Dialogue/dialogue_style.tres"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
-variables={}
+layout/style_list=["res://Data/Style/Dialogue/dialogue_style.tres"]
+layout/default_style="res://Data/Style/Dialogue/dialogue_style.tres"
+variables={
+"Opinions": {
+"paper_cat": 0,
+"paper_moon": 0,
+"paper_player": 4,
+"player_paper": 0
+}
+}
 
 [display]
 
@@ -73,6 +84,7 @@ dialogic_default_action={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

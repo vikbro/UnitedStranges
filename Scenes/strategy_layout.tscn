@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://btt5do33u622f" path="res://Data/Components/allegiance_highlighter.gd" id="5_p0iyg"]
 [ext_resource type="LabelSettings" uid="uid://hj6mjei6qcw2" path="res://Data/Label/debug_label.tres" id="6_rs4nu"]
 [ext_resource type="Script" uid="uid://c1jpvr0ejg48t" path="res://Scripts/debug_ui.gd" id="7_53vkc"]
+[ext_resource type="Script" uid="uid://525ab0vwem67" path="res://Scripts/debug_dialogue.gd" id="8_ym7h4"]
 
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 
@@ -18,7 +19,7 @@ tile_set = ExtResource("1_othr5")
 
 [node name="KingdomArea" type="TileMapLayer" parent="." unique_id=1889909057 node_paths=PackedStringArray("kingdom_grid")]
 position = Vector2(128, 128)
-tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAEAAEAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAIAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAEAAEAAAAAAAIAAAA=")
 tile_set = ExtResource("1_othr5")
 script = ExtResource("2_itj6s")
 kingdom_grid = NodePath("ArenaKingdomGrid")
@@ -212,8 +213,32 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "Activate Dimpolacy"
 
+[node name="DialogueDebug" type="HBoxContainer" parent="CanvasLayer" unique_id=1018645376]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 110.0
+grow_vertical = 0
+script = ExtResource("8_ym7h4")
+
+[node name="PaperButton" type="Button" parent="CanvasLayer/DialogueDebug" unique_id=1872238622]
+layout_mode = 2
+text = "Talk to Paper"
+
+[node name="MoonButton" type="Button" parent="CanvasLayer/DialogueDebug" unique_id=1303450146]
+layout_mode = 2
+text = "Talk to Moon"
+
+[node name="CatButton" type="Button" parent="CanvasLayer/DialogueDebug" unique_id=812093368]
+layout_mode = 2
+text = "Talk to Cat
+"
+
 [connection signal="item_selected" from="CanvasLayer/VBoxContainer/HBoxContainer/OpinionOf" to="CanvasLayer/VBoxContainer" method="_on_opinion_of_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/VBoxContainer/HBoxContainer/OpinionAbout" to="CanvasLayer/VBoxContainer" method="_on_opinion_about_item_selected"]
 [connection signal="text_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/TextEdit" to="CanvasLayer/VBoxContainer" method="_on_text_edit_text_changed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/SubmitBtn" to="CanvasLayer/VBoxContainer" method="_on_submit_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/DiplomacyButton" to="CanvasLayer/VBoxContainer" method="_on_diplomacy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueDebug/PaperButton" to="CanvasLayer/DialogueDebug" method="_on_paper_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueDebug/MoonButton" to="CanvasLayer/DialogueDebug" method="_on_moon_button_pressed"]

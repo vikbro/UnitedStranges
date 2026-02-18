@@ -1,0 +1,16 @@
+king_paper: THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
+[lspeed=0.5]  UGH [lspeed=x!] UGH UGH UGH UGH UGH UGH
+if {Opinions.paper_player} == 3.0 || {Opinions.paper_player} == 4.0:
+	jump paper_greets/paper_friendly_greet
+elif {Opinions.paper_player} == 0.0 || {Opinions.paper_player} == 1.0:
+	jump paper_greets/paper_anoyed_greet
+else:
+	jump paper_greets/paper_neutral_greet
+king_paper: this is the following dialogue
+king_paper: Do you like Moon?
+- Yes
+	do DiplomacyManager.modify_opinion(0, 3, 20)
+- NO
+	do DiplomacyManager.modify_opinion(0, 3, -20)
+king_paper: Interesting
+king_paper: Goodbye!
