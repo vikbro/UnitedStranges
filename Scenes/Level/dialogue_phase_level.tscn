@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://sccvf5bptkd3"]
+
+[ext_resource type="Script" uid="uid://dc7wfe5bv6lpl" path="res://Scripts/dialogue_phase.gd" id="1_h5kd2"]
+[ext_resource type="Resource" uid="uid://hq12i3pflt8v" path="res://Data/Resources/paper_kingdom.tres" id="2_6atcv"]
+[ext_resource type="Script" uid="uid://c4bn2kqke3hvd" path="res://Data/Resources/Level/dialogue_phase.gd" id="3_tyc3e"]
+
+[sub_resource type="Resource" id="Resource_osc2n"]
+script = ExtResource("3_tyc3e")
+kingdom_stats = ExtResource("2_6atcv")
+metadata/_custom_type_script = "uid://c4bn2kqke3hvd"
+
+[node name="DialoguePhaseLevel" type="Node2D" unique_id=1807475831]
+script = ExtResource("1_h5kd2")
+level_info = SubResource("Resource_osc2n")

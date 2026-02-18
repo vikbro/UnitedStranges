@@ -1,5 +1,7 @@
 extends Node
 
+const DIALOGUE_PHASE_LEVEL = preload("uid://sccvf5bptkd3")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,13 +13,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_paper_button_pressed() -> void:
-	Dialogic.start("paper_dialogue")
-	#Events.stop_highlight.connect()
-
-	pass # Replace with function body.
-
-func _on_moon_button_pressed() -> void:
-	#Dialogic.start("paper_dialogue")
+func _on_paper_transport_pressed() -> void:
+	
+	SceneTransition.change_scene_to_node(DIALOGUE_PHASE_LEVEL.instantiate(),DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].background_img)
 	
 	pass # Replace with function body.

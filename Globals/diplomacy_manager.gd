@@ -33,12 +33,10 @@ func simulate_diplomacy() -> void:
 func _simulate_diplomacy() -> void:
 	# Get the player kingdom
 	var player_kingdom: KingdomStats = kingdoms.get(KingdomStats.Type.PLAYER)
-	
 	# Validate player exists
 	if player_kingdom == null:
 		printerr("Cannot simulate diplomacy: Player kingdom not found!")
 		return
-	
 	# Update each non-player kingdom's opinion of the player
 	for kingdom: KingdomStats in kingdoms.values():
 		# Skip the player itself
@@ -47,7 +45,9 @@ func _simulate_diplomacy() -> void:
 		
 		# Pass the player's opinions dictionary
 		kingdom.calculate_player_opinion(player_kingdom.opinions)
-	
+	DialogicManager._update_dialogic_allegience()
+	#DialogicManager
+
 
 func modify_opinion(opinon_of: KingdomStats.Type,opinion_about: KingdomStats.Type, amount: int) -> void:
 	var kingdom_of : KingdomStats = kingdoms.get(opinon_of,0)
@@ -91,11 +91,7 @@ func _ready() -> void:
 
 ## Get all kingdoms (exclude PLAYER type)
 func get_all_kingdoms() -> Array[KingdomStats]:
-	var result: Array[KingdomStats] = []
-	for type in [KingdomStats.Type.PAPER, KingdomStats.Type.CAT, KingdomStats.Type.MOON]:
-		if kingdoms.has(type):
-			result.append(kingdoms[type])
-	return result
+	return kingdoms.values()
 
 
 

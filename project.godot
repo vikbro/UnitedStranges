@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 DiplomacyManager="*uid://dtw0ogcq34jq0"
 Events="*uid://c6vpu2ynyo0qs"
+SceneTransition="*uid://dk45b4r5if84"
+DialogicManager="*uid://d2gs5bjn5g23t"
 
 [dialogic]
 
@@ -38,11 +40,13 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://Data/Style/Dialogue/dialogue_style.tres"]
 layout/default_style="res://Data/Style/Dialogue/dialogue_style.tres"
 variables={
-"Opinions": {
+"OPINOINS": {
 "paper_cat": 0,
 "paper_moon": 0,
-"paper_player": 4,
-"player_paper": 0
+"paper_player": 0,
+"player_cat": 0,
+"player_moon": 0,
+"player_paper": 4
 }
 }
 

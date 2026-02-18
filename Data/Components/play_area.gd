@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label4".text = str(get_hovered_tile())
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label5".text = str(is_tile_in_bounds(get_hovered_tile()))
 	$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label6".text = str(get_global_from_tile(get_hovered_tile()))
+#	sOMTIMES AN ERROR OCCURES HERE
 	if current_kingdoms.has(get_hovered_tile()) == true:
 		$"../CanvasLayer/HBoxContainer/VBoxContainer2/Label7".text = str(current_kingdoms[get_hovered_tile()])
 

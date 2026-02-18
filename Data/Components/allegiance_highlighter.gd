@@ -13,6 +13,8 @@ var selected_kingdom: KingdomStats : set = _set_selected_kingdom
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Events.stop_highlight.connect(_set_enabled.bind(false))
+	Events.start_highlight.connect(_set_enabled.bind(true))
 	pass # Replace with function body.
 
 
