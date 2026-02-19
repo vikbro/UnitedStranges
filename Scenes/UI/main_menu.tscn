@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://clvce3cbhmrcd" path="res://Scripts/UI/main_menu.gd" id="1_mrfpk"]
 [ext_resource type="Texture2D" uid="uid://bov2q5bln123h" path="res://Assets/Background/paralax_paper/paper_background_0.png" id="2_4pqbp"]
+[ext_resource type="Texture2D" uid="uid://cw8084c6kwjfc" path="res://Assets/Background/paralax_paper/normal_background_0.png" id="2_jewm6"]
+[ext_resource type="Script" uid="uid://d2q6conu06isq" path="res://Data/Resources/Backgrounds/paralax_bg_data.gd" id="2_q6o50"]
+[ext_resource type="Resource" uid="uid://jj6hs8jn0lt6" path="res://Data/Resources/Backgrounds/normal_bg.tres" id="3_46hhv"]
+[ext_resource type="Texture2D" uid="uid://baqv6xcmk6rmx" path="res://Assets/Background/paralax_paper/normal_background_1.png" id="3_cejvf"]
 [ext_resource type="Texture2D" uid="uid://di2d3gm07kxk5" path="res://Assets/Background/paralax_paper/paper_background_1.png" id="3_gih0s"]
 [ext_resource type="Texture2D" uid="uid://c80yokucqalje" path="res://Assets/Background/paralax_paper/paper_background_2.png" id="4_k33u3"]
+[ext_resource type="Resource" uid="uid://dokh1xnyk3dab" path="res://Data/Resources/Backgrounds/paper_bg.tres" id="4_oslnl"]
+[ext_resource type="Texture2D" uid="uid://qi6lpng1p443" path="res://Assets/Background/paralax_paper/normal_background_2.png" id="4_ru8vt"]
 [ext_resource type="Texture2D" uid="uid://dx2rp7hv4ymqa" path="res://Assets/Background/paralax_paper/paper_background_3.png" id="5_lrjdf"]
+[ext_resource type="Texture2D" uid="uid://cuho40xdpooph" path="res://Assets/Background/paralax_paper/normal_background_3.png" id="5_ypsd1"]
 [ext_resource type="Texture2D" uid="uid://jcwsl3010f7d" path="res://Assets/UI/swipe_menu.png" id="6_4pqbp"]
 [ext_resource type="Script" uid="uid://c6xflvasbfdi4" path="res://Scripts/UI/rich_text_gradient.gd" id="7_gih0s"]
 [ext_resource type="FontFile" uid="uid://bhyvih0pkaa2x" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills.ttf" id="7_jewm6"]
@@ -46,44 +53,118 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_mrfpk")
+backgrounds = Array[ExtResource("2_q6o50")]([ExtResource("3_46hhv"), ExtResource("4_oslnl")])
 
-[node name="Background0" type="TextureRect" parent="." unique_id=934308437]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=257114754]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LayeredBackgorund1" type="Control" parent="." unique_id=2134188448]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background0" type="TextureRect" parent="LayeredBackgorund1" unique_id=934308437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_jewm6")
+
+[node name="Background1" type="TextureRect" parent="LayeredBackgorund1" unique_id=196329748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_cejvf")
+
+[node name="Background2" type="TextureRect" parent="LayeredBackgorund1" unique_id=73773935]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_ru8vt")
+
+[node name="Background3" type="TextureRect" parent="LayeredBackgorund1" unique_id=25604741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_ypsd1")
+
+[node name="LayeredBackgorund2" type="Control" parent="." unique_id=1167598210]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background0" type="TextureRect" parent="LayeredBackgorund2" unique_id=141459709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_4pqbp")
 
-[node name="Background1" type="TextureRect" parent="." unique_id=196329748]
+[node name="Background1" type="TextureRect" parent="LayeredBackgorund2" unique_id=189214532]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.05, 1.05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("3_gih0s")
 
-[node name="Background2" type="TextureRect" parent="." unique_id=73773935]
+[node name="Background2" type="TextureRect" parent="LayeredBackgorund2" unique_id=562306238]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.05, 1.05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_k33u3")
 
-[node name="Background3" type="TextureRect" parent="." unique_id=25604741]
+[node name="Background3" type="TextureRect" parent="LayeredBackgorund2" unique_id=2132153137]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.05, 1.05)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("5_lrjdf")
 
@@ -140,5 +221,7 @@ theme_override_fonts/font = SubResource("FontVariation_jewm6")
 theme_override_font_sizes/font_size = 47
 theme_override_styles/normal = SubResource("StyleBoxFlat_cejvf")
 text = "START"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=434669082]
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Button" to="." method="_on_button_pressed"]
