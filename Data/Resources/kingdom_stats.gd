@@ -21,8 +21,6 @@ enum Type {PLAYER,PAPER, CAT, MOON}
 @export var opinions : Dictionary[Type, int] = {}
 @export var diplomat_img : Texture2D
 @export var background_img  : Texture2D
-@export var dialogue_level: DialoguePhase
-
 
 func create_instance() -> Resource:
 	var instance: KingdomStats = self.duplicate()

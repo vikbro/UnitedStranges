@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://d0pdgcgiy8lv3"]
+
+[ext_resource type="Script" uid="uid://clvce3cbhmrcd" path="res://Scripts/UI/main_menu.gd" id="1_mrfpk"]
+[ext_resource type="Texture2D" uid="uid://bov2q5bln123h" path="res://Assets/Background/paralax_paper/paper_background_0.png" id="2_4pqbp"]
+[ext_resource type="Texture2D" uid="uid://di2d3gm07kxk5" path="res://Assets/Background/paralax_paper/paper_background_1.png" id="3_gih0s"]
+[ext_resource type="Texture2D" uid="uid://c80yokucqalje" path="res://Assets/Background/paralax_paper/paper_background_2.png" id="4_k33u3"]
+[ext_resource type="Texture2D" uid="uid://dx2rp7hv4ymqa" path="res://Assets/Background/paralax_paper/paper_background_3.png" id="5_lrjdf"]
+[ext_resource type="Texture2D" uid="uid://jcwsl3010f7d" path="res://Assets/UI/swipe_menu.png" id="6_4pqbp"]
+[ext_resource type="Script" uid="uid://c6xflvasbfdi4" path="res://Scripts/UI/rich_text_gradient.gd" id="7_gih0s"]
+[ext_resource type="FontFile" uid="uid://bhyvih0pkaa2x" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills.ttf" id="7_jewm6"]
+[ext_resource type="FontFile" uid="uid://7eubtfckrpev" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Bold.ttf" id="8_cejvf"]
+[ext_resource type="FontFile" uid="uid://i0kcjtxd4bem" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Bold Italic.ttf" id="9_ru8vt"]
+[ext_resource type="FontFile" uid="uid://cnl5mcjfg8lqg" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Italic.ttf" id="10_ypsd1"]
+
+[sub_resource type="Gradient" id="Gradient_k33u3"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.08898779, 0.41268727, 0.6504432, 1, 0.5903655, 0.79595846, 0.98337847, 1, 0.08898779, 0.41268727, 0.6504432, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lrjdf"]
+script = ExtResource("7_gih0s")
+gradient = SubResource("Gradient_k33u3")
+metadata/_custom_type_script = "uid://c6xflvasbfdi4"
+
+[sub_resource type="FontVariation" id="FontVariation_jewm6"]
+base_font = ExtResource("7_jewm6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cejvf"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12156863, 0.43529412, 0.67058825, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Control" unique_id=1950026450]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_mrfpk")
+
+[node name="Background0" type="TextureRect" parent="." unique_id=934308437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_4pqbp")
+
+[node name="Background1" type="TextureRect" parent="." unique_id=196329748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_gih0s")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=73773935]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_k33u3")
+
+[node name="Background3" type="TextureRect" parent="." unique_id=25604741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_lrjdf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1900333119]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1782838052]
+modulate = Color(1, 1, 1, 0.68235296)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_4pqbp")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer" unique_id=1916850587]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -191.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("7_jewm6")
+theme_override_fonts/bold_font = ExtResource("8_cejvf")
+theme_override_fonts/bold_italics_font = ExtResource("9_ru8vt")
+theme_override_fonts/italics_font = ExtResource("10_ypsd1")
+theme_override_font_sizes/normal_font_size = 73
+theme_override_font_sizes/bold_font_size = 73
+theme_override_font_sizes/bold_italics_font_size = 74
+theme_override_font_sizes/italics_font_size = 89
+bbcode_enabled = true
+text = "[gradient  speed=0.5 span=8.0][i]United Stranges[/i][/gradient]"
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_lrjdf")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1643792959]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -164.0
+offset_right = 179.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer" unique_id=1941237850]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_jewm6")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_cejvf")
+text = "START"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Button" to="." method="_on_button_pressed"]
