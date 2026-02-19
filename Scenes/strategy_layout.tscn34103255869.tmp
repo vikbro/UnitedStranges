@@ -162,7 +162,7 @@ _data = {
 script = ExtResource("1_ym7h4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=241684687]
-position = Vector2(576, 324)
+position = Vector2(588, 316)
 position_smoothing_enabled = true
 script = ExtResource("11_ld4ir")
 

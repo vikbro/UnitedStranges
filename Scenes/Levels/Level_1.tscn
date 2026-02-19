@@ -1,0 +1,259 @@
+[gd_scene format=4 uid="uid://d251dk066kegy"]
+
+[ext_resource type="TileSet" uid="uid://dylal06ntukho" path="res://Data/TileSet/placeholder_kingdom.tres" id="1_qpfou"]
+[ext_resource type="Script" uid="uid://2yg4dko2felc" path="res://Data/Components/play_area.gd" id="2_ybqp2"]
+[ext_resource type="Script" uid="uid://dd2y46jg54x0p" path="res://Data/Components/kingdom_grid.gd" id="3_iyh3f"]
+[ext_resource type="Script" uid="uid://c1tner2fuuuav" path="res://Data/Components/tile_highlighter.gd" id="4_ducwx"]
+[ext_resource type="Script" uid="uid://btt5do33u622f" path="res://Data/Components/allegiance_highlighter.gd" id="5_hs11j"]
+[ext_resource type="Script" uid="uid://dkybll4p6p7tl" path="res://Scripts/kingdom_info.gd" id="6_ducwx"]
+[ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_Kingdom.png" id="6_iyh3f"]
+[ext_resource type="Texture2D" uid="uid://cdktxx46bv3lp" path="res://Assets/Banner/paper_banner.png" id="7_iyh3f"]
+
+[sub_resource type="Animation" id="Animation_iyh3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/KingdomInfo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hs11j"]
+resource_name = "hide_kingdom_info"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/KingdomInfo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666, 0.2, 0.3, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(752, 0), Vector2(774.2, 0), Vector2(900, 0), Vector2(1174.39, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ducwx"]
+resource_name = "show_kingdom_info"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/KingdomInfo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1174.39, 0), Vector2(900, 0), Vector2(774.2, 0), Vector2(752, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hs11j"]
+_data = {
+&"RESET": SubResource("Animation_iyh3f"),
+&"hide_kingdom_info": SubResource("Animation_hs11j"),
+&"show_kingdom_info": SubResource("Animation_ducwx")
+}
+
+[node name="Tile" type="Node2D" unique_id=601054590]
+
+[node name="Visuals" type="Node2D" parent="." unique_id=842890368]
+
+[node name="Background" type="TileMapLayer" parent="Visuals" unique_id=266518450]
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAIAAAAAAAIAAAAEAAIAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAIAAAABAAAAAAAEAAIAAAABAAQAAAAEAAIAAAACAAAAAAAEAAIAAAACAAIAAAAEAAAAAAACAAQAAAAEAAIAAAADAAAAAAAEAAIAAAADAAIAAAAEAAAAAAADAAMAAAAEAAAAAAADAAQAAAAEAAIAAAAEAAIAAAAEAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAIAAAAFAAAAAAAEAAIAAAAFAAEAAAAEAAAAAAAFAAIAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAIAAAAGAAAAAAAEAAIAAAAGAAEAAAAEAAAAAAAGAAIAAAAEAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAIAAAAHAAAAAAAEAAIAAAAHAAEAAAAEAAAAAAAHAAIAAAAEAAAAAAAHAAMAAAAEAAAAAAAHAAQAAAAEAAIAAAAIAAAAAAAEAAIAAAAIAAEAAAAEAAIAAAAIAAIAAAAEAAIAAAAIAAMAAAAEAAIAAAAIAAQAAAAEAAIAAAAAAAUAAAAEAAEAAAABAAUAAAAEAAEAAAACAAUAAAAEAAEAAAADAAUAAAAEAAEAAAAEAAUAAAAEAAEAAAAFAAUAAAAEAAEAAAAGAAUAAAAEAAEAAAAHAAUAAAAEAAEAAAAIAAUAAAAEAAEAAAAEAAAAAAAEAAIAAAABAAEAAAAEAAAAAAAAAAEAAAAEAAIAAAACAAEAAAAEAAAAAAADAAEAAAAEAAAAAAAEAAEAAAAEAAAAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAEAAAD//wUAAAAEAAEAAAD//wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAEAAAD///7/AAAEAAEAAAAAAP7/AAAEAAEAAAABAP7/AAAEAAEAAAACAP7/AAAEAAEAAAADAP7/AAAEAAEAAAAEAP7/AAAEAAEAAAAEAP//AAAEAAEAAAAFAP//AAAEAAEAAAAGAP//AAAEAAEAAAAHAP//AAAEAAEAAAAIAP//AAAEAAEAAAAJAP//AAAEAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAHAP7/AAAEAAEAAAAGAP7/AAAEAAEAAAAFAP7/AAAEAAEAAAACAP//AAAEAAEAAAADAP//AAAEAAEAAAABAP//AAAEAAEAAAAAAP//AAAEAAEAAAD+////AAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD8//7/AAAEAAEAAAD+//7/AAAEAAEAAAD8////AAAEAAEAAAD8/wAAAAAEAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD+/wEAAAAEAAEAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAEAAAD8/wIAAAAEAAEAAAD8/wMAAAAEAAEAAAD8/wQAAAAEAAEAAAD8/wUAAAAEAAEAAAD9/wIAAAAEAAEAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD9/wUAAAAEAAEAAAD+/wQAAAAEAAEAAAD+/wUAAAAEAAEAAAD8/wYAAAAEAAEAAAD8/wcAAAAEAAEAAAD9/wYAAAAEAAEAAAD9/wcAAAAEAAEAAAD+/wYAAAAEAAEAAAD+/wcAAAAEAAEAAAD//wYAAAAEAAEAAAD//wcAAAAEAAEAAAD8/wgAAAAEAAEAAAD9/wgAAAAEAAEAAAD+/wgAAAAEAAEAAAD//wgAAAAEAAEAAAAAAAYAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAgAAAAEAAEAAAABAAYAAAAEAAEAAAABAAcAAAAEAAEAAAABAAgAAAAEAAEAAAACAAYAAAAEAAEAAAACAAcAAAAEAAEAAAACAAgAAAAEAAEAAAADAAYAAAAEAAEAAAADAAcAAAAEAAEAAAADAAgAAAAEAAEAAAAEAAYAAAAEAAEAAAAEAAcAAAAEAAEAAAAEAAgAAAAEAAEAAAAFAAYAAAAEAAEAAAAFAAcAAAAEAAEAAAAFAAgAAAAEAAEAAAAGAAYAAAAEAAEAAAAGAAcAAAAEAAEAAAAGAAgAAAAEAAEAAAAHAAYAAAAEAAEAAAAHAAcAAAAEAAEAAAAHAAgAAAAEAAEAAAAIAAYAAAAEAAEAAAAIAAcAAAAEAAEAAAAIAAgAAAAEAAEAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAAJAAgAAAAEAAEAAAAKAAUAAAAEAAEAAAAKAAYAAAAEAAEAAAAKAAcAAAAEAAEAAAAKAAgAAAAEAAEAAAALAAUAAAAEAAEAAAALAAYAAAAEAAEAAAALAAcAAAAEAAEAAAALAAgAAAAEAAEAAAAMAAUAAAAEAAEAAAAMAAYAAAAEAAEAAAAMAAcAAAAEAAEAAAAMAAgAAAAEAAEAAAAJAP3/AAAEAAEAAAAKAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAAKAP//AAAEAAEAAAAKAAAAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAIAAAAEAAEAAAAKAAMAAAAEAAEAAAAKAAQAAAAEAAEAAAALAP3/AAAEAAEAAAALAP7/AAAEAAEAAAALAP//AAAEAAEAAAALAAAAAAAEAAEAAAALAAEAAAAEAAEAAAALAAIAAAAEAAEAAAALAAMAAAAEAAEAAAALAAQAAAAEAAEAAAAMAP3/AAAEAAEAAAAMAP7/AAAEAAEAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAEAAAAMAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAEAAAAJAPz/AAAEAAEAAAAKAPz/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAD8//z/AAAEAAEAAAD8//3/AAAEAAEAAAD9//z/AAAEAAEAAAD9//3/AAAEAAEAAAD+//z/AAAEAAEAAAD+//3/AAAEAAEAAAD///z/AAAEAAEAAAD///3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAP3/AAAEAAEAAAABAPz/AAAEAAEAAAABAP3/AAAEAAEAAAACAPz/AAAEAAEAAAACAP3/AAAEAAEAAAADAPz/AAAEAAEAAAADAP3/AAAEAAEAAAAEAPz/AAAEAAEAAAAEAP3/AAAEAAEAAAAFAPz/AAAEAAEAAAAFAP3/AAAEAAEAAAAGAPz/AAAEAAEAAAAGAP3/AAAEAAEAAAAHAPz/AAAEAAEAAAAHAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAP3/AAAEAAEAAAACAAMAAAAEAAAAAAABAAMAAAAEAAAAAAABAAIAAAAEAAAAAAA=")
+tile_set = ExtResource("1_qpfou")
+
+[node name="KingdomArea" type="TileMapLayer" parent="." unique_id=949835215 node_paths=PackedStringArray("kingdom_grid")]
+position = Vector2(128, 128)
+tile_map_data = PackedByteArray("AAADAAEAAAABAAIAAAABAAAAAAAAAAIAAAA=")
+tile_set = ExtResource("1_qpfou")
+script = ExtResource("2_ybqp2")
+kingdom_grid = NodePath("ArenaKingdomGrid")
+debug = false
+metadata/_edit_lock_ = true
+
+[node name="ArenaKingdomGrid" type="Node2D" parent="KingdomArea" unique_id=1367400009 node_paths=PackedStringArray("kingdom_tiles")]
+script = ExtResource("3_iyh3f")
+size = Vector2i(7, 3)
+kingdom_tiles = NodePath("..")
+
+[node name="AllegienceHighlight" type="TileMapLayer" parent="KingdomArea" unique_id=617592753]
+tile_set = ExtResource("1_qpfou")
+
+[node name="Highlight" type="TileMapLayer" parent="KingdomArea" unique_id=2078438929]
+tile_set = ExtResource("1_qpfou")
+
+[node name="TileHighlighter" type="Node" parent="KingdomArea" unique_id=833670279 node_paths=PackedStringArray("play_area", "highlight_layer")]
+script = ExtResource("4_ducwx")
+play_area = NodePath("..")
+highlight_layer = NodePath("../Highlight")
+tile = Vector2i(3, 0)
+
+[node name="AllegienceHighlighter" type="Node" parent="KingdomArea" unique_id=1559286611 node_paths=PackedStringArray("play_area", "highlight_layer")]
+script = ExtResource("5_hs11j")
+play_area = NodePath("..")
+highlight_layer = NodePath("../AllegienceHighlight")
+friend_tile = Vector2i(2, 1)
+enemy_tile = Vector2i(3, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1065420151]
+
+[node name="KingdomInfo" type="MarginContainer" parent="CanvasLayer" unique_id=1678992716]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = 0.0072021484
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("6_ducwx")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/KingdomInfo" unique_id=1409302796]
+clip_contents = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/KingdomInfo/Panel" unique_id=1534071229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer" unique_id=845267093]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="KingdomName" type="Label" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/MarginContainer2" unique_id=883776684]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "KINGDOM OF PAPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer" unique_id=922287281]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/MarginContainer" unique_id=130942737]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/MarginContainer/Panel" unique_id=1125453380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KingdomBackground" type="TextureRect" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/MarginContainer/Panel/MarginContainer" unique_id=1778247454]
+layout_mode = 2
+texture = ExtResource("6_iyh3f")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer" unique_id=458898455]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer" unique_id=1685348863]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer/MarginContainer" unique_id=992266875]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="KingdomBanner" type="TextureRect" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer/MarginContainer" unique_id=258965439]
+layout_mode = 2
+texture = ExtResource("7_iyh3f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer" unique_id=258096850]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="KingdomDescription" type="Label" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1785742694]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Description:
+
+
+
+
+
+
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer" unique_id=1102482324]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer2" unique_id=717246310]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=261896891]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Kingdom opinion of player"
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer2" unique_id=30636918]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="OpinionLbl" type="Label" parent="CanvasLayer/KingdomInfo/Panel/VBoxContainer/HBoxContainer2/MarginContainer2" unique_id=821550332]
+layout_mode = 2
+text = "+5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1566446003]
+libraries/ = SubResource("AnimationLibrary_hs11j")
+autoplay = &"show_kingdom_info"
