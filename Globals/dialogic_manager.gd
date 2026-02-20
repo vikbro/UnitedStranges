@@ -8,4 +8,5 @@ func _ready() -> void:
 func update_dialogic_allegience():
 	#for kingdom: KingdomStats in DiplomacyManager.get_all_kingdoms():
 		
-	Dialogic.VAR.set_variable("player_paper",0)
+	#Dialogic.VAR.OPINIONS.set_variable("player_paper",0)
+	Dialogic.VAR.set("player_paper",0)

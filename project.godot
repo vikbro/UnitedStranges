@@ -40,7 +40,7 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://Data/Style/Dialogue/dialogue_style.tres"]
 layout/default_style="res://Data/Style/Dialogue/dialogue_style.tres"
 variables={
-"OPINOINS": {
+"OPINIONS": {
 "paper_cat": 0,
 "paper_moon": 0,
 "paper_player": 0,

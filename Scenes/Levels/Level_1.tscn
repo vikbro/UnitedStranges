@@ -24,6 +24,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(752, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/KingdomInfo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_hs11j"]
 resource_name = "hide_kingdom_info"
@@ -38,6 +50,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(752, 0), Vector2(774.2, 0), Vector2(900, 0), Vector2(1174.39, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/KingdomInfo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ducwx"]
@@ -54,6 +78,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1174.39, 0), Vector2(900, 0), Vector2(774.2, 0), Vector2(752, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/KingdomInfo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs11j"]
@@ -78,6 +114,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAABAAIAAAABAAAAAAAAAAIAAAABAAIAAAAAAAM
 tile_set = ExtResource("1_qpfou")
 script = ExtResource("2_ybqp2")
 kingdom_grid = NodePath("ArenaKingdomGrid")
+debug = false
 metadata/_edit_lock_ = true
 
 [node name="ArenaKingdomGrid" type="Node2D" parent="KingdomArea" unique_id=1367400009 node_paths=PackedStringArray("kingdom_tiles")]
@@ -107,12 +144,13 @@ enemy_tile = Vector2i(3, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1065420151]
 
 [node name="KingdomInfo" type="MarginContainer" parent="CanvasLayer" unique_id=1678992716]
+visible = false
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_right = 0.0072021484
+offset_right = 0.007080078
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 50
@@ -265,4 +303,3 @@ text = "+5"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1566446003]
 libraries/ = SubResource("AnimationLibrary_hs11j")
-autoplay = &"show_kingdom_info"

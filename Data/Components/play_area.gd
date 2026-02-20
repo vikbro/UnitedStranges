@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 				_selected_tile = Vector2i(-9999, -9999)
 				Events.kingdom_deselected.emit()
 				Events.hide_kingdom_info.emit()
-				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
+				#Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 
 				
 

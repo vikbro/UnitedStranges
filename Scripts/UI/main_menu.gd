@@ -3,6 +3,9 @@ extends Control
 @onready var layer_1: Control = $LayeredBackgorund1
 @onready var layer_2: Control = $LayeredBackgorund2
 
+const LEVEL_SELECTION = "res://Scenes/UI/LevelSelection.tscn"
+
+
 @onready var bg1 := [
 	$LayeredBackgorund1/Background0,
 	$LayeredBackgorund1/Background1,
@@ -93,5 +96,6 @@ func _load_background(targets: Array, data: ParalaxBGData) -> void:
 	targets[3].texture = data.texture_3
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/strategy_layout.tscn")
+	SceneTransition.fade_to_scene(LEVEL_SELECTION)
+	#get_tree().change_scene_to_file("res://Scenes/strategy_layout.tscn")
 	pass # Replace with function body.
