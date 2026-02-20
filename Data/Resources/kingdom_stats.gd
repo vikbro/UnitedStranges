@@ -12,27 +12,44 @@ const LIKE_THRESHOLD :int = 10
 const ALLY_THRESHOLD :int = 75
 
 enum AllegienceType {ENEMY,DISLIKE,NEUTRAL,LIKE,ALLY}
-enum Type {PLAYER,PAPER, CAT, MOON}
+enum Type {PLAYER,PAPER,SUN,ICE,VAMPIRE}
 
-@export var kingdom_type : Type
 
 # Opinion ranges from -100 (enemy) to 100 (ally)
 # Dictionary keys match Type enum values
 @export var opinions : Dictionary[Type, int] = {}
+
+@export var kingdom_type : Type
 @export var diplomat_img : Texture2D
 @export var background_img  : Texture2D
+@export var description : String
+@export var banner_img : Texture2D
+@export var level_scene: PackedScene
+#@export var
 
 func create_instance() -> Resource:
 	var instance: KingdomStats = self.duplicate()
 	#instance.
 	return instance
 
+func get_type_to_string() -> String:
+	var type_names : Dictionary[Type,String] = {
+		Type.PLAYER: "Player",
+		Type.PAPER: "Paper",
+		Type.SUN: "SUN", 
+		Type.ICE: "ICE",
+		Type.VAMPIRE: "VAMPIRE"
+	}
+	
+	return type_names.get(kingdom_type, "Unknown")
+
 func _to_string() -> String:
 	var type_names : Dictionary[Type,String] = {
 		Type.PLAYER: "Player",
 		Type.PAPER: "Paper",
-		Type.CAT: "Cat", 
-		Type.MOON: "Moon"
+		Type.SUN: "SUN", 
+		Type.ICE: "ICE",
+		Type.VAMPIRE: "VAMPIRE"
 	}
 	
 	var type_name = type_names.get(kingdom_type, "Unknown")
@@ -95,6 +112,8 @@ func calculate_player_opinion(player_opinions: Dictionary[Type, int]) -> void:
 	var new_value := clampi(roundi(base + total_influence), MIN_OP, MAX_OP)
 	
 	opinions[Type.PLAYER] = new_value
+	#Events.play_splash.emit()
+
 
 func modify_opinion(change_kingdom: Type, amount: int) -> void:
 	var base = opinions.get(change_kingdom,0)

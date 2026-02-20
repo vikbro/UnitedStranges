@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c80yokucqalje" path="res://Assets/Background/paralax_paper/paper_background_2.png" id="4_k33u3"]
 [ext_resource type="Resource" uid="uid://dokh1xnyk3dab" path="res://Data/Resources/Backgrounds/paper_bg.tres" id="4_oslnl"]
 [ext_resource type="Texture2D" uid="uid://qi6lpng1p443" path="res://Assets/Background/paralax_paper/normal_background_2.png" id="4_ru8vt"]
+[ext_resource type="Resource" uid="uid://cxg8l3ojjy02l" path="res://Data/Resources/Backgrounds/sun_bg.tres" id="5_46hhv"]
 [ext_resource type="Texture2D" uid="uid://dx2rp7hv4ymqa" path="res://Assets/Background/paralax_paper/paper_background_3.png" id="5_lrjdf"]
 [ext_resource type="Texture2D" uid="uid://cuho40xdpooph" path="res://Assets/Background/paralax_paper/normal_background_3.png" id="5_ypsd1"]
 [ext_resource type="Texture2D" uid="uid://jcwsl3010f7d" path="res://Assets/UI/swipe_menu.png" id="6_4pqbp"]
@@ -53,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_mrfpk")
-backgrounds = Array[ExtResource("2_q6o50")]([ExtResource("3_46hhv"), ExtResource("4_oslnl")])
+backgrounds = Array[ExtResource("2_q6o50")]([ExtResource("3_46hhv"), ExtResource("4_oslnl"), ExtResource("5_46hhv")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=257114754]
 layout_mode = 1

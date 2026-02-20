@@ -13,10 +13,11 @@ func _ready() -> void:
 	Events.hide_kingdom_info.connect(_hide_info)
 
 func _load_kingdom_info(kingdom: KingdomStats) -> void:
-	#kingdom_name = kingdom
+	kingdom_name.text = "KINGDOM OF " + kingdom.get_type_to_string()
 	kingdom_background.texture = kingdom.background_img
-	#kingdom_banner
-	#kingdom_description
+	kingdom_banner.texture = kingdom.banner_img
+	kingdom_description.text = kingdom.description
+	
 	if !kingdom.opinions.has(KingdomStats.Type.PLAYER):
 		opinion_lbl.text = "0"
 	elif kingdom.opinions[KingdomStats.Type.PLAYER] > 0:

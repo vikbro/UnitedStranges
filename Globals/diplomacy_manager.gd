@@ -45,7 +45,7 @@ func _simulate_diplomacy() -> void:
 		
 		# Pass the player's opinions dictionary
 		kingdom.calculate_player_opinion(player_kingdom.opinions)
-	DialogicManager._update_dialogic_allegience()
+	DialogicManager.update_dialogic_allegience()
 	#DialogicManager
 
 
@@ -98,8 +98,9 @@ func get_direct_opinion(from_kingdom: int, of_kingdom: int) -> int:
 func _get_type_name(type_value: KingdomStats.Type) -> String:
 	var type_names = {
 		KingdomStats.Type.PAPER: "Paper",
-		KingdomStats.Type.CAT: "Cat",
-		KingdomStats.Type.MOON: "Moon",
-		KingdomStats.Type.PLAYER: "Player"
+		KingdomStats.Type.SUN: "Sun",
+		KingdomStats.Type.ICE: "Ice",
+		KingdomStats.Type.PLAYER: "Player",
+		KingdomStats.Type.VAMPIRE: "VAMPIRE"
 	}
 	return type_names.get(type_value, "Unknown")

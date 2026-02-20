@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv8tx1bq51fl8"]
 
-[ext_resource type="Texture2D" uid="uid://dcswy6y3dtugy" path="res://Assets/VFX/Splash_animation.png" id="1_3njq4"]
+[ext_resource type="Texture2D" uid="uid://s5fqudn3ojn5" path="res://Assets/VFX/splash_animation.png" id="1_3njq4"]
 
 [sub_resource type="Animation" id="Animation_we6qp"]
 length = 0.001
@@ -16,12 +16,24 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xefwx"]
-resource_name = "splash_effect"
-length = 0.5
-loop_mode = 1
-step = 0.5
+resource_name = "splash_animation"
+length = 1.2
+loop_mode = 2
+step = 0.025
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -29,25 +41,80 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45000002, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5957592),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.194202),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kmy2x"]
 _data = {
 &"RESET": SubResource("Animation_we6qp"),
-&"splash_effect": SubResource("Animation_xefwx")
+&"splash_animation": SubResource("Animation_xefwx")
 }
 
+[sub_resource type="Curve" id="Curve_xefwx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), -0.07694129, -0.07694129, 0, 0, Vector2(0.52884614, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_kmy2x"]
+curve = SubResource("Curve_xefwx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6d6tq"]
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -98, 0)
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_kmy2x")
+
 [node name="Node2D" type="Node2D" unique_id=1023828818]
+modulate = Color(1, 0, 0, 1)
+z_index = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2016224932]
 texture = ExtResource("1_3njq4")
 hframes = 13
 region_rect = Rect2(256, 256, 128, 128)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=136926456]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1797738097]
 libraries/ = SubResource("AnimationLibrary_kmy2x")
-autoplay = &"splash_effect"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1666025140]
+amount = 24
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.2
+trail_sections = 2
+trail_section_subdivisions = 2
+process_material = SubResource("ParticleProcessMaterial_6d6tq")

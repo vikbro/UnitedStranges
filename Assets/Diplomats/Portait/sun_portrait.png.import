@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s5fqudn3ojn5"
-path="res://.godot/imported/splash_animation.png-539621e9e1a20bae54e512b74a8b01a7.ctex"
+uid="uid://c78sjj1wwpib6"
+path="res://.godot/imported/sun_portrait.png-b980d31f18680f0056a2d3df5c56643b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/VFX/splash_animation.png"
-dest_files=["res://.godot/imported/splash_animation.png-539621e9e1a20bae54e512b74a8b01a7.ctex"]
+source_file="res://Assets/Diplomats/Portait/sun_portrait.png"
+dest_files=["res://.godot/imported/sun_portrait.png-b980d31f18680f0056a2d3df5c56643b.ctex"]
 
 [params]
 

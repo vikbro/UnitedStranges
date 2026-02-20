@@ -30,17 +30,22 @@ func _input(event: InputEvent) -> void:
 				_selected_tile = Vector2i(-9999, -9999)
 				Events.kingdom_deselected.emit()
 				Events.hide_kingdom_info.emit()
+				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 				
 			else:
 				_selected_tile = hovered
 				Events.kingdom_selected.emit(get_global_from_tile(hovered))
 				Events.show_kingdom_info.emit(current_kingdoms[_selected_tile])
+				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
+				
 		else:
 			# Clicked empty tile — deselect
 			if _selected_tile != Vector2i(-9999, -9999):
 				_selected_tile = Vector2i(-9999, -9999)
 				Events.kingdom_deselected.emit()
 				Events.hide_kingdom_info.emit()
+				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
+
 				
 
 func _process(delta: float) -> void:
@@ -52,6 +57,7 @@ func _process(delta: float) -> void:
 		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label5".text = str(is_tile_in_bounds(get_hovered_tile()))
 		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label6".text = str(get_global_from_tile(get_hovered_tile()))
 		if current_kingdoms.has(get_hovered_tile()):
+			#$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label7"
 			$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label7".text = str(current_kingdoms[get_hovered_tile()])
 
 func get_tile_from_global(global: Vector2) -> Vector2i:

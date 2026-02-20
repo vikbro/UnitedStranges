@@ -12,3 +12,5 @@ signal kingdom_deselected                      # camera unlocks
 
 signal show_kingdom_info(kingdom: KingdomStats)
 signal hide_kingdom_info
+
+signal play_splash(global_pos:Vector2,color:Color)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dk45b4r5if84"]
 
 [ext_resource type="Script" uid="uid://dc0cmk2152fnw" path="res://Scripts/scene_transition.gd" id="1_rgpwx"]
-[ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_Kingdom.png" id="2_vwb75"]
+[ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_BG.png" id="2_vwb75"]
 
 [sub_resource type="Animation" id="Animation_xtxrl"]
 tracks/0/type = "value"

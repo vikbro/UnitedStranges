@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s5fqudn3ojn5"
-path="res://.godot/imported/splash_animation.png-539621e9e1a20bae54e512b74a8b01a7.ctex"
+uid="uid://v0cav8010rxn"
+path="res://.godot/imported/Normal_BG.png-8980227a8cf068b764a1323c313d85af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/VFX/splash_animation.png"
-dest_files=["res://.godot/imported/splash_animation.png-539621e9e1a20bae54e512b74a8b01a7.ctex"]
+source_file="res://Assets/Background/Normal_BG.png"
+dest_files=["res://.godot/imported/Normal_BG.png-8980227a8cf068b764a1323c313d85af.ctex"]
 
 [params]
 

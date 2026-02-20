@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="KingdomStats" format=3 uid="uid://hq12i3pflt8v"]
 
 [ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="1_ace4g"]
-[ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_Kingdom.png" id="1_f4kph"]
-[ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="2_na70k"]
+[ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_BG.png" id="1_na70k"]
+[ext_resource type="Texture2D" uid="uid://cdktxx46bv3lp" path="res://Assets/Banner/paper_banner.png" id="2_mf2u8"]
+[ext_resource type="Texture2D" uid="uid://dqi8nrxoy7j0" path="res://Assets/Diplomats/Portait/KingPaper_portrait.png" id="3_oomyl"]
 
 [resource]
 script = ExtResource("1_ace4g")
-kingdom_type = 1
 opinions = Dictionary[int, int]({
 3: -80
 })
-diplomat_img = ExtResource("2_na70k")
-background_img = ExtResource("1_f4kph")
+kingdom_type = 1
+diplomat_img = ExtResource("3_oomyl")
+background_img = ExtResource("1_na70k")
+description = "Scissors are BANNED! The papers are profficient in battle against rocks."
+banner_img = ExtResource("2_mf2u8")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

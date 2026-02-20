@@ -322,11 +322,12 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 auto_width = true
-item_count = 4
+item_count = 5
 item_0/text = "Player"
 item_1/text = "Paper"
-item_2/text = "Cat"
-item_3/text = "Moon"
+item_2/text = "Sun"
+item_3/text = "Ice"
+item_4/text = "Vampire"
 
 [node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=420483204]
 layout_mode = 2
@@ -338,11 +339,12 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 auto_width = true
-item_count = 4
+item_count = 5
 item_0/text = "Player"
 item_1/text = "Paper"
-item_2/text = "Cat"
-item_3/text = "Moon"
+item_2/text = "Sun"
+item_3/text = "Ice"
+item_4/text = "Vampire"
 
 [node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1085413736]
 layout_mode = 2
