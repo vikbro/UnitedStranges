@@ -14,3 +14,7 @@ signal show_kingdom_info(kingdom: KingdomStats)
 signal hide_kingdom_info
 
 signal play_splash(global_pos:Vector2,color:Color)
+
+signal area_interaction
+signal player_enter
+signal enter

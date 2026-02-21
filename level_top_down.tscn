@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkfertgb2ybhq" path="res://level_top_down.gd" id="1_hrc0o"]
 [ext_resource type="PackedScene" uid="uid://bfk1qlqtfa43c" path="res://Scenes/player_movement.tscn" id="2_6qs3l"]
 [ext_resource type="PackedScene" uid="uid://dviw37doql5i" path="res://diplomats.tscn" id="3_sia70"]
+[ext_resource type="Script" uid="uid://7wfi8wekjyyf" path="res://progress_bar.gd" id="4_xbkh0"]
 
 [node name="Level" type="Node2D" unique_id=2026976430]
 script = ExtResource("1_hrc0o")
@@ -10,11 +11,26 @@ script = ExtResource("1_hrc0o")
 [node name="CharacterBody2D" parent="." unique_id=1180616646 instance=ExtResource("2_6qs3l")]
 position = Vector2(252, 381)
 
-[node name="Timer" type="Timer" parent="." unique_id=577849961]
-wait_time = 30.0
-one_shot = true
-autostart = true
-
 [node name="Diplomats" parent="." unique_id=1093528857 instance=ExtResource("3_sia70")]
 visible = false
 position = Vector2(787, 205)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1610486229]
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=577849961]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Timer" unique_id=1694763464]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 114.0
+grow_horizontal = 2
+max_value = 30.0
+value = 5.0
+fill_mode = 1
+show_percentage = false
+script = ExtResource("4_xbkh0")
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
