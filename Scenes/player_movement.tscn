@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfk1qlqtfa43c"]
+
+[ext_resource type="Script" uid="uid://b5xiloxf4vpga" path="res://Scenes/player_movement.gd" id="1_4nywd"]
+[ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="1_yrei1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nywd"]
+atlas = ExtResource("1_yrei1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldtrf"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nywd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfbmq"]
+radius = 65.0
+height = 172.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_4nywd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ldtrf")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.662975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dfbmq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
