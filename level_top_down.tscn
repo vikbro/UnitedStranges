@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cmc32gebwtyfh"]
+
+[ext_resource type="Script" uid="uid://dkfertgb2ybhq" path="res://level_top_down.gd" id="1_hrc0o"]
+[ext_resource type="PackedScene" uid="uid://bfk1qlqtfa43c" path="res://Scenes/player_movement.tscn" id="2_6qs3l"]
+[ext_resource type="PackedScene" uid="uid://dviw37doql5i" path="res://diplomats.tscn" id="3_sia70"]
+
+[node name="Level" type="Node2D" unique_id=2026976430]
+script = ExtResource("1_hrc0o")
+
+[node name="CharacterBody2D" parent="." unique_id=1180616646 instance=ExtResource("2_6qs3l")]
+position = Vector2(252, 381)
+
+[node name="Timer" type="Timer" parent="." unique_id=577849961]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Diplomats" parent="." unique_id=1093528857 instance=ExtResource("3_sia70")]
+visible = false
+position = Vector2(787, 205)

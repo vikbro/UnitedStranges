@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dviw37doql5i"]
+
+[ext_resource type="Script" uid="uid://bsrf4bll7q2eo" path="res://diplomats.gd" id="1_kbigv"]
+[ext_resource type="Texture2D" uid="uid://dgn3us7assr64" path="res://Assets/Diplomats/Paper_kingdom.png" id="2_ul24o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8pii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ul24o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrs6t"]
+size = Vector2(124, 126)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul24o"]
+radius = 249.008
+
+[node name="Diplomats" type="CharacterBody2D"]
+script = ExtResource("1_kbigv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c8pii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nrs6t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ul24o")
