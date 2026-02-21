@@ -23,12 +23,13 @@ func insert_kingdom(kingdom: KingdomStats) -> void:
 func clear_kingdoms() -> void:
 	kingdoms.clear()
 
-# Ensurea all tile kingdoms form opinion about the player
-func simulate_diplomacy() -> void:
-	for kingdom : KingdomStats in kingdoms.values():
-		kingdom.calculate_player_opinion(kingdoms.get(KingdomStats.Type.PLAYER))
-		
-	pass
+## Ensurea all tile kingdoms form opinion about the player
+#func simulate_diplomacy() -> void:
+	#for kingdom : KingdomStats in kingdoms.values():
+		#kingdom.calculate_player_opinion(kingdoms.get(KingdomStats.Type.PLAYER))
+	#
+
+
 	
 func _simulate_diplomacy() -> void:
 	# Get the player kingdom
@@ -46,6 +47,10 @@ func _simulate_diplomacy() -> void:
 		# Pass the player's opinions dictionary
 		kingdom.calculate_player_opinion(player_kingdom.opinions)
 	DialogicManager.update_dialogic_allegience()
+	if check_win_condition() == true:
+		Events.level_win.emit()
+	elif check_lose_condition() == true:
+		Events.level_lose.emit()
 	#DialogicManager
 
 
@@ -63,24 +68,24 @@ func modify_opinion(opinon_of: KingdomStats.Type,opinion_about: KingdomStats.Typ
 ## Check if all kingdoms are allied with the player
 func check_win_condition() -> bool:
 	for kingdom : KingdomStats in kingdoms.values():
+		if kingdom.kingdom_type == KingdomStats.Type.PLAYER:
+			continue
 		if kingdom.get_allegience(KingdomStats.Type.PLAYER) == KingdomStats.AllegienceType.ALLY:
 			continue
 		else:
 			return false
 	return true
-	
-	Events.level_win.emit()
-	
+
 ## Check if all kingdoms are enemies with the player
 func check_lose_condition() -> bool:
 	for kingdom : KingdomStats in kingdoms.values():
+		if kingdom.kingdom_type == KingdomStats.Type.PLAYER:
+			continue
 		if kingdom.get_allegience(KingdomStats.Type.PLAYER) == KingdomStats.AllegienceType.ENEMY:
 			continue
 		else:
 			return false
 	return true
-	
-	Events.level_lose.emit()
 
 func _ready() -> void:
 	pass

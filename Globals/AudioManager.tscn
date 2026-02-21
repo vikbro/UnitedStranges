@@ -5,6 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dcs5q5fi1yj4m" path="res://Audio/Button/Wood Block2 - Copy.mp3" id="3_ixva1"]
 [ext_resource type="AudioStream" uid="uid://b88sxklyged5n" path="res://Audio/Button/Wood Block1 - Copy.mp3" id="4_21uwq"]
 [ext_resource type="AudioStream" uid="uid://de8rrx1w8546p" path="res://Audio/Hover/Coffee1.mp3" id="5_d5p0i"]
+[ext_resource type="AudioStream" uid="uid://dhxgkpmydyqhw" path="res://Audio/Win/Fanfare Trumpet Victory Tune-(SoundEffectsFactory.com)_.mp3" id="6_21uwq"]
+[ext_resource type="AudioStream" uid="uid://b8k6lkb7nokm2" path="res://Audio/Music/african_drums.mp3" id="7_d5p0i"]
 
 [node name="Audio" type="Node" unique_id=469776343]
 script = ExtResource("1_1v8rx")
@@ -21,3 +23,19 @@ stream = ExtResource("4_21uwq")
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=1158788691]
 stream = ExtResource("5_d5p0i")
 volume_db = -5.0
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=768915677]
+stream = ExtResource("6_21uwq")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[node name="AfricanDrums" type="AudioStreamPlayer" parent="." unique_id=440004417]
+stream = ExtResource("7_d5p0i")
+volume_db = -20.0
+pitch_scale = 0.9
+parameters/looping = true
+
+[node name="Lose" type="AudioStreamPlayer" parent="." unique_id=775983258]
+stream = ExtResource("6_21uwq")
+volume_db = -10.0
+pitch_scale = 0.6

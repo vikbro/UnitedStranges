@@ -4,6 +4,9 @@ extends Node
 @onready var zoom_in: AudioStreamPlayer = $ZoomIn
 @onready var zoom_out: AudioStreamPlayer = $ZoomOut
 @onready var hover: AudioStreamPlayer = $Hover
+@onready var win: AudioStreamPlayer = $Win
+@onready var lose: AudioStreamPlayer = $Lose
+@onready var african_drums: AudioStreamPlayer = $AfricanDrums
 
 func _ready() -> void:
 	#Events.button_click.connect(button_click.play)

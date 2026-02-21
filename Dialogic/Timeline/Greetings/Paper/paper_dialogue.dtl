@@ -1,4 +1,4 @@
-THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
+king_paper: THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
 if {OPINIONS.paper_player} == 3.0 || {OPINIONS.paper_player} == 4.0:
 	jump paper_greets/paper_friendly_greet
 elif {OPINIONS.paper_player} == 0.0 || {OPINIONS.paper_player} == 1.0:

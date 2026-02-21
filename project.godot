@@ -42,12 +42,13 @@ directories/dtl_directory={
 "paper_greets": "res://Dialogic/Timeline/Greetings/Paper/paper_greets.dtl"
 }
 layout/style_directory={
-"": "res://Data/Style/Dialogue/norm.tres",
-"norm": "res://Data/Style/Dialogue/norm.tres"
+"": "res://Data/Style/Dialogue/visual_novel.tres",
+"speaker_textbox": "res://Data/Style/Dialogue/speaker_textbox.tres",
+"visual_novel": "res://Data/Style/Dialogue/visual_novel.tres"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Data/Style/Dialogue/norm.tres"]
-layout/default_style="res://Data/Style/Dialogue/norm.tres"
+layout/style_list=["res://Data/Style/Dialogue/visual_novel.tres", "res://Data/Style/Dialogue/speaker_textbox.tres"]
+layout/default_style="res://Data/Style/Dialogue/visual_novel.tres"
 variables={
 "OPINIONS": {
 "paper_cat": 0,

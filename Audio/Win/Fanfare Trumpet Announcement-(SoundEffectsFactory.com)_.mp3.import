@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drdoonqs6inbi"
+path="res://.godot/imported/Fanfare Trumpet Announcement-(SoundEffectsFactory.com)_.mp3-8f44eed84776946a4047066bd9e7d71d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Win/Fanfare Trumpet Announcement-(SoundEffectsFactory.com)_.mp3"
+dest_files=["res://.godot/imported/Fanfare Trumpet Announcement-(SoundEffectsFactory.com)_.mp3-8f44eed84776946a4047066bd9e7d71d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

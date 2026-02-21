@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://5vpn8a35rpd1"]
 
 [ext_resource type="Script" uid="uid://nd0hgetgyj1t" path="res://Scripts/strategy_phase.gd" id="1_ym7h4"]
-[ext_resource type="PackedScene" uid="uid://d251dk066kegy" path="res://Scenes/Levels/Level_1.tscn" id="2_kuflx"]
+[ext_resource type="Shader" uid="uid://bh6mu1xc313ej" path="res://Data/Shader/clouds.gdshader" id="4_ym7h4"]
 [ext_resource type="LabelSettings" uid="uid://hj6mjei6qcw2" path="res://Data/Label/debug_label.tres" id="6_rs4nu"]
 [ext_resource type="Script" uid="uid://c1jpvr0ejg48t" path="res://Scripts/debug_ui.gd" id="7_53vkc"]
 [ext_resource type="Script" uid="uid://525ab0vwem67" path="res://Scripts/debug_dialogue.gd" id="8_ym7h4"]
 [ext_resource type="Script" uid="uid://blx7idcm33esw" path="res://Scripts/debug_dialogue_phase.gd" id="9_kuflx"]
 [ext_resource type="Shader" uid="uid://x24ji8qvyp6i" path="res://Data/Shader/vignette.gdshader" id="10_wmmkm"]
 [ext_resource type="Script" uid="uid://bpvwshwt4uclx" path="res://Scripts/strategy_camera.gd" id="11_ld4ir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuflx"]
+shader = ExtResource("4_ym7h4")
+shader_parameter/wind_dir_angle = 43.42
+shader_parameter/wind_speed = 10.0
+shader_parameter/use_wind_gusts = false
+shader_parameter/patch_width_px = 100.0
+shader_parameter/patch_height_px = 50.0
+shader_parameter/pixel_size_px = 1.0
+shader_parameter/rotation_degrees = 48.805
+shader_parameter/threshold = 0.685
+shader_parameter/opacity = 0.2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ld4ir"]
 shader = ExtResource("10_wmmkm")
@@ -161,16 +173,24 @@ _data = {
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 script = ExtResource("1_ym7h4")
 
+[node name="Clouds" type="ColorRect" parent="." unique_id=572314179]
+z_index = 1
+material = SubResource("ShaderMaterial_kuflx")
+offset_left = -790.0
+offset_top = -363.00003
+offset_right = -788.079
+offset_bottom = -361.35004
+scale = Vector2(1470, 829.99994)
+color = Color(0, 0, 0, 1)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=241684687]
 position = Vector2(576, 324)
 position_smoothing_enabled = true
 script = ExtResource("11_ld4ir")
 
-[node name="Tile" parent="." unique_id=601054590 instance=ExtResource("2_kuflx")]
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1691035604]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1144905411]
+[node name="Vignette" type="ColorRect" parent="CanvasLayer2" unique_id=1144905411]
 material = SubResource("ShaderMaterial_ld4ir")
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,6 +240,7 @@ text = "Return
 Menu"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269338331]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2038055597]
 offset_right = 40.0

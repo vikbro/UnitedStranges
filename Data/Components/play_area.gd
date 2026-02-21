@@ -9,6 +9,17 @@ var bounds: Rect2i
 var _selected_tile: Vector2i = Vector2i(-9999, -9999)
 
 func _ready() -> void:
+	Events.enter_level.connect(_load_kingdom_data)
+	Events.exit_level.connect(_unload_data)
+	#bounds = Rect2i(Vector2.ZERO, kingdom_grid.size)
+	#for cell: Vector2i in get_used_cells():
+		#var data = get_cell_tile_data(cell)
+		#if data != null:
+			#var kingdom_data = data.get_custom_data("kingdom_data")
+			#add_kingdom(cell, kingdom_data)
+	pass
+
+func _load_kingdom_data() -> void:
 	bounds = Rect2i(Vector2.ZERO, kingdom_grid.size)
 	for cell: Vector2i in get_used_cells():
 		var data = get_cell_tile_data(cell)
@@ -16,6 +27,9 @@ func _ready() -> void:
 			var kingdom_data = data.get_custom_data("kingdom_data")
 			add_kingdom(cell, kingdom_data)
 
+func _unload_data() -> void:
+	DiplomacyManager.clear_kingdoms()
+	
 func add_kingdom(tile: Vector2i, kingdom: KingdomStats) -> void:
 	current_kingdoms[tile] = kingdom
 	DiplomacyManager.insert_kingdom(kingdom)
@@ -23,7 +37,6 @@ func add_kingdom(tile: Vector2i, kingdom: KingdomStats) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var hovered := get_hovered_tile()
-
 		if current_kingdoms.has(hovered) and is_tile_in_bounds(hovered):
 			if _selected_tile == hovered:
 				# Clicking the same tile deselects
@@ -32,14 +45,12 @@ func _input(event: InputEvent) -> void:
 				Events.hide_kingdom_info.emit()
 				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 				AudioManager.zoom_out.play()
-				
 			else:
 				_selected_tile = hovered
 				Events.kingdom_selected.emit(get_global_from_tile(hovered))
 				Events.show_kingdom_info.emit(current_kingdoms[_selected_tile])
 				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 				AudioManager.zoom_in.play()
-				
 		else:
 			# Clicked empty tile — deselect
 			if _selected_tile != Vector2i(-9999, -9999):
@@ -48,8 +59,6 @@ func _input(event: InputEvent) -> void:
 				Events.hide_kingdom_info.emit()
 				AudioManager.zoom_out.play()
 				#Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
-
-				
 
 func _process(delta: float) -> void:
 	if debug:

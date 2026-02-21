@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iqw2o6rwhwu1"
+path="res://.godot/imported/Trumpet Royal Entrance-(SoundEffectsFactory.com)_.mp3-4adabf4d92deaf6fbe3b84ea43d9b7d0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Win/Trumpet Royal Entrance-(SoundEffectsFactory.com)_.mp3"
+dest_files=["res://.godot/imported/Trumpet Royal Entrance-(SoundEffectsFactory.com)_.mp3-4adabf4d92deaf6fbe3b84ea43d9b7d0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

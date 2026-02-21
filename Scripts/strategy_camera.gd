@@ -13,6 +13,8 @@ var _target_zoom := Vector2.ONE
 func _ready() -> void:
 	Events.kingdom_selected.connect(_on_kingdom_selected)
 	Events.kingdom_deselected.connect(_on_kingdom_deselected)
+	Events.start_camera_movemnt.connect(_on_start_camera_movement)
+	Events.stop_camera_movemnt.connect(_on_stop_camera_movement)
 	_target_zoom = zoom
 	_origin_position = global_position  # store starting position
 	_target_position = global_position
@@ -41,3 +43,9 @@ func _physics_process(delta: float) -> void:
 		var mouse_pos := get_global_mouse_position() - viewport_size / 2.0
 		var normalized := (mouse_pos / (viewport_size / 2.0)).clamp(Vector2(-1, -1), Vector2(1, 1))
 		offset = lerp(offset, normalized * strength, weight)
+
+func _on_stop_camera_movement() -> void:
+	set_physics_process(false)
+
+func _on_start_camera_movement() -> void:
+	set_physics_process(true)

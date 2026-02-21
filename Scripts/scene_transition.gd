@@ -46,7 +46,7 @@ func fade_to_level(strategy_path: String, level_path: String) -> void:
 	var level_scene = load(level_path).instantiate()
 
 	# Add the level as a child of the Tile node inside strategy
-	var tile_node = strategy_scene.get_node("Tile")
+	#var tile_node = strategy_scene.get_node("Tile")
 	strategy_scene.add_child(level_scene)
 
 	get_tree().change_scene_to_node(strategy_scene)

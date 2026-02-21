@@ -3,7 +3,10 @@ extends Node
 
 func _ready() -> void:
 	Dialogic.timeline_started.connect(Events.stop_highlight.emit)
+	Dialogic.timeline_started.connect(Events.stop_camera_movemnt.emit)
+
 	Dialogic.timeline_ended.connect(Events.start_highlight.emit)
+	Dialogic.timeline_ended.connect(Events.start_camera_movemnt.emit)
 
 func update_dialogic_allegience():
 	#for kingdom: KingdomStats in DiplomacyManager.get_all_kingdoms():
