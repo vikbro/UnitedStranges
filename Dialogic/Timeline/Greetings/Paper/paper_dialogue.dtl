@@ -1,7 +1,7 @@
-king_paper: THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
-if {OPINOINS.paper_player} == 3.0 || {OPINOINS.paper_player} == 4.0:
+THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
+if {OPINIONS.paper_player} == 3.0 || {OPINIONS.paper_player} == 4.0:
 	jump paper_greets/paper_friendly_greet
-elif {OPINOINS.paper_player} == 0.0 || {OPINOINS.paper_player} == 1.0:
+elif {OPINIONS.paper_player} == 0.0 || {OPINIONS.paper_player} == 1.0:
 	jump paper_greets/paper_anoyed_greet
 else:
 	jump paper_greets/paper_neutral_greet

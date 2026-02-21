@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 	var selected_tile := play_area.get_hovered_tile()
 	
 	if not play_area.is_tile_in_bounds(selected_tile):
+
 		highlight_layer.clear()
 		return
 	

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dlwhwjjfu4t73"]
+
+[ext_resource type="Script" uid="uid://kuf0jw04gxgw" path="res://Globals/audio.gd" id="1_1v8rx"]
+[ext_resource type="AudioStream" uid="uid://c2c24kotj1wue" path="res://Audio/Button/Wood Block3 - Copy.mp3" id="2_03a21"]
+[ext_resource type="AudioStream" uid="uid://dcs5q5fi1yj4m" path="res://Audio/Button/Wood Block2 - Copy.mp3" id="3_ixva1"]
+[ext_resource type="AudioStream" uid="uid://b88sxklyged5n" path="res://Audio/Button/Wood Block1 - Copy.mp3" id="4_21uwq"]
+[ext_resource type="AudioStream" uid="uid://de8rrx1w8546p" path="res://Audio/Hover/Coffee1.mp3" id="5_d5p0i"]
+
+[node name="Audio" type="Node" unique_id=469776343]
+script = ExtResource("1_1v8rx")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=650921372]
+stream = ExtResource("2_03a21")
+
+[node name="ZoomIn" type="AudioStreamPlayer" parent="." unique_id=698633434]
+stream = ExtResource("3_ixva1")
+
+[node name="ZoomOut" type="AudioStreamPlayer" parent="." unique_id=1293061929]
+stream = ExtResource("4_21uwq")
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=1158788691]
+stream = ExtResource("5_d5p0i")
+volume_db = -5.0

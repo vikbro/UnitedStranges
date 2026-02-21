@@ -1,6 +1,6 @@
 extends Node
 
-const DIALOGUE_PHASE_LEVEL = preload("uid://sccvf5bptkd3")
+const DIALOGUE_PHASE_LEVEL = "res://Scenes/Level/dialogue_phase_level.tscn"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 
@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 
@@ -22,6 +23,6 @@ func _on_paper_transport_pressed() -> void:
 	animation_player.play("fade_out_text_panel")
 	await animation_player.animation_finished
 	
-	SceneTransition.change_scene_to_node(DIALOGUE_PHASE_LEVEL.instantiate(),DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].background_img)
+	SceneTransition.dissolve_to_scene(DIALOGUE_PHASE_LEVEL,DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].background_img)
 	
 	pass # Replace with function body.

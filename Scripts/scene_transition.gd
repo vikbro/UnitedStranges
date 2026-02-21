@@ -2,16 +2,56 @@ extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var texture_rect: TextureRect = $TextureRect
-@export var wait_time: int = 2
+@onready var color_rect: ColorRect = $ColorRect
 
+@export var wait_time: float = .5
 
-func change_scene_to_node(target: Node,transition_texture:Texture = null) -> void:
+func fade_to_scene(scene_path: String) -> void:
+	visible = true
+	animation_player.play("fade_to_black")
+	await animation_player.animation_finished
+
+	get_tree().change_scene_to_file(scene_path)
+	await get_tree().create_timer(wait_time).timeout
+
+	animation_player.play_backwards("fade_to_black")
+	await animation_player.animation_finished
+	visible = false
+	
+
+func dissolve_to_scene(scene_path: String, transition_texture: Texture2D = null) -> void:
+	visible = true
 	texture_rect.texture = transition_texture
+	texture_rect.visible = transition_texture != null
+
 	animation_player.play_backwards("dissolve")
 	await animation_player.animation_finished
-	#if target is DialoguePhaseLevel:
-	get_tree().change_scene_to_node(target)
-		
+
+	get_tree().change_scene_to_file(scene_path)
 	await get_tree().create_timer(wait_time).timeout
+
 	animation_player.play("dissolve")
-	
+	await animation_player.animation_finished
+	visible = false
+
+func fade_to_level(strategy_path: String, level_path: String) -> void:
+	visible = true
+	animation_player.play("fade_to_black")
+	await animation_player.animation_finished
+
+	# Load and instantiate the strategy layout
+	var strategy_scene = load(strategy_path).instantiate()
+
+	# Load and instantiate the level tile
+	var level_scene = load(level_path).instantiate()
+
+	# Add the level as a child of the Tile node inside strategy
+	var tile_node = strategy_scene.get_node("Tile")
+	strategy_scene.add_child(level_scene)
+
+	get_tree().change_scene_to_node(strategy_scene)
+
+	await get_tree().create_timer(wait_time).timeout
+	animation_player.play_backwards("fade_to_black")
+	await animation_player.animation_finished
+	visible = false

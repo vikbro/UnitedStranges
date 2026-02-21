@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80dir4tlkc3q"
-path="res://.godot/imported/Paper_Kingdom.png-1a67bfaf583ef4ba601d4c5315143e13.ctex"
+uid="uid://waplg366jdv4"
+path="res://.godot/imported/conference_tileset.png-81d70c3b81c8a000cf2be9502f37e7fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/Paper_Kingdom.png"
-dest_files=["res://.godot/imported/Paper_Kingdom.png-1a67bfaf583ef4ba601d4c5315143e13.ctex"]
+source_file="res://Assets/Tileset/conference_tileset.png"
+dest_files=["res://.godot/imported/conference_tileset.png-81d70c3b81c8a000cf2be9502f37e7fb.ctex"]
 
 [params]
 

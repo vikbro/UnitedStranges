@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ParalaxBGData" format=3 uid="uid://crmgew4t6i8a5"]
+
+[ext_resource type="Script" uid="uid://d2q6conu06isq" path="res://Data/Resources/Backgrounds/paralax_bg_data.gd" id="1_lglvx"]
+[ext_resource type="Texture2D" uid="uid://coqeqe5ra4eyf" path="res://Assets/Background/paralax_paper/vampire_bg_0.png" id="2_lglvx"]
+[ext_resource type="Texture2D" uid="uid://pdj0xw36ow5n" path="res://Assets/Background/paralax_paper/vampire_bg_1.png" id="3_ina05"]
+[ext_resource type="Texture2D" uid="uid://b6qwktscfec8u" path="res://Assets/Background/paralax_paper/vampire_bg_2.png" id="4_6mto2"]
+[ext_resource type="Texture2D" uid="uid://c836xx433t5cn" path="res://Assets/Background/paralax_paper/vampire_bg_3.png" id="5_ccicf"]
+
+[resource]
+script = ExtResource("1_lglvx")
+texture_0 = ExtResource("2_lglvx")
+texture_1 = ExtResource("3_ina05")
+texture_2 = ExtResource("4_6mto2")
+texture_3 = ExtResource("5_ccicf")
+metadata/_custom_type_script = "uid://d2q6conu06isq"
