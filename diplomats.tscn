@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dviw37doql5i"]
+[gd_scene format=3 uid="uid://dviw37doql5i"]
 
 [ext_resource type="Script" uid="uid://bsrf4bll7q2eo" path="res://diplomats.gd" id="1_kbigv"]
 [ext_resource type="Texture2D" uid="uid://dgn3us7assr64" path="res://Assets/Diplomats/Paper_kingdom.png" id="2_ul24o"]
+[ext_resource type="Script" uid="uid://cbbt5sfy22f5" path="res://area.gd" id="3_c8pii"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8pii"]
 animations = [{
@@ -20,16 +21,19 @@ size = Vector2(124, 126)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ul24o"]
 radius = 249.008
 
-[node name="Diplomats" type="CharacterBody2D"]
+[node name="Diplomats" type="CharacterBody2D" unique_id=1825840023]
 script = ExtResource("1_kbigv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1157851612]
 sprite_frames = SubResource("SpriteFrames_c8pii")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890377444]
 shape = SubResource("RectangleShape2D_nrs6t")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=187675256]
+script = ExtResource("3_c8pii")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=66951910]
 shape = SubResource("CircleShape2D_ul24o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
