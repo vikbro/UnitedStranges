@@ -31,12 +31,14 @@ func _input(event: InputEvent) -> void:
 				Events.kingdom_deselected.emit()
 				Events.hide_kingdom_info.emit()
 				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
+				AudioManager.zoom_out.play()
 				
 			else:
 				_selected_tile = hovered
 				Events.kingdom_selected.emit(get_global_from_tile(hovered))
 				Events.show_kingdom_info.emit(current_kingdoms[_selected_tile])
 				Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
+				AudioManager.zoom_in.play()
 				
 		else:
 			# Clicked empty tile — deselect
@@ -44,6 +46,7 @@ func _input(event: InputEvent) -> void:
 				_selected_tile = Vector2i(-9999, -9999)
 				Events.kingdom_deselected.emit()
 				Events.hide_kingdom_info.emit()
+				AudioManager.zoom_out.play()
 				#Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 
 				

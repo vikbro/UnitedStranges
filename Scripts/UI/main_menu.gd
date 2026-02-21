@@ -97,5 +97,6 @@ func _load_background(targets: Array, data: ParalaxBGData) -> void:
 
 func _on_button_pressed() -> void:
 	SceneTransition.fade_to_scene(LEVEL_SELECTION)
+	AudioManager.button_click.play()
 	#get_tree().change_scene_to_file("res://Scenes/strategy_layout.tscn")
 	pass # Replace with function body.

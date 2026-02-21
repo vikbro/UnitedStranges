@@ -7,6 +7,7 @@ const STRATEGY_LAYOUT = "res://Scenes/strategy_layout.tscn"
 
 
 func _on_lvl_1_pressed() -> void:
+	AudioManager.button_click.play()
 	SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_1)
 	#SceneTransition.fade_to_scene(LEVEL_1)
 	
@@ -14,6 +15,7 @@ func _on_lvl_1_pressed() -> void:
 
 
 func _on_lvl_2_pressed() -> void:
+	AudioManager.button_click.play()
 	SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_1)
 	
 	#SceneTransition.fade_to_scene(LEVEL_2)
@@ -22,18 +24,22 @@ func _on_lvl_2_pressed() -> void:
 
 
 func _on_lvl_3_pressed() -> void:
+	AudioManager.button_click.play()
 	pass # Replace with function body.
 
 
 func _on_lvl_4_pressed() -> void:
+	AudioManager.button_click.play()
 	pass # Replace with function body.
 
 
 func _on_lvl_5_pressed() -> void:
+	AudioManager.button_click.play()
 	pass # Replace with function body.
 
 
 func _on_back_btn_pressed() -> void:
+	AudioManager.button_click.play()
 	SceneTransition.fade_to_scene(MAIN_MENU)
 
 	pass # Replace with function body.

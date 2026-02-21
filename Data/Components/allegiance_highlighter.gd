@@ -4,43 +4,44 @@ class_name AllegianceHighlighter
 @export var enabled: bool = true : set = _set_enabled
 @export var play_area: PlayArea
 @export var highlight_layer: TileMapLayer
-@export var friend_tile: Vector2i      # Tile atlas coordinate for friendly highlight
-@export var enemy_tile: Vector2i       # Tile atlas coordinate for enemy highlight
+@export var friend_tile: Vector2i
+@export var enemy_tile: Vector2i
 
 @onready var source_id := play_area.tile_set.get_source_id(0)
 
 var selected_kingdom: KingdomStats : set = _set_selected_kingdom
+var _last_hovered_tile: Vector2i = Vector2i(-9999, -9999)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.stop_highlight.connect(_set_enabled.bind(false))
 	Events.start_highlight.connect(_set_enabled.bind(true))
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if not enabled:
 		highlight_layer.clear()
+		_last_hovered_tile = Vector2i(-9999, -9999)  # reset here too
 		return
 	
 	var hovered_tile := play_area.get_hovered_tile()
 	if not play_area.is_tile_in_bounds(hovered_tile):
 		highlight_layer.clear()
+		_last_hovered_tile = Vector2i(-9999, -9999)
 		return
 	
 	var hovered_kingdom = play_area.current_kingdoms.get(hovered_tile)
 	if not hovered_kingdom:
 		highlight_layer.clear()
+		_last_hovered_tile = Vector2i(-9999, -9999)  # reset on empty tiles too
 		return
 	
-	selected_kingdom = hovered_kingdom
-	
-	_update_all_tiles()
+	if hovered_tile != _last_hovered_tile:
+		_last_hovered_tile = hovered_tile
+		AudioManager.hover.play()
+		selected_kingdom = hovered_kingdom
+		_update_all_tiles()
 
 func _set_enabled(new_value: bool) -> void:
 	enabled = new_value
-	
 	if not enabled and play_area:
 		highlight_layer.clear()
 
@@ -49,22 +50,17 @@ func _set_selected_kingdom(new_kingdom: KingdomStats) -> void:
 
 func _update_all_tiles() -> void:
 	highlight_layer.clear()
+	
 	if not selected_kingdom:
 		return
 	
-	# Iterate over every tile that has a kingdom
 	for tile: Vector2i in play_area.current_kingdoms.keys():
 		var tile_kingdom: KingdomStats = play_area.current_kingdoms[tile]
 		if tile_kingdom.kingdom_type == selected_kingdom.kingdom_type:
 			continue
-		var tile_allegience := selected_kingdom.get_allegience(tile_kingdom.kingdom_type)
-		if tile_allegience == KingdomStats.AllegienceType.ENEMY || tile_allegience == KingdomStats.AllegienceType.DISLIKE :
+		
+		var tile_allegiance := selected_kingdom.get_allegience(tile_kingdom.kingdom_type)
+		if tile_allegiance == KingdomStats.AllegienceType.ENEMY or tile_allegiance == KingdomStats.AllegienceType.DISLIKE:
 			highlight_layer.set_cell(tile, source_id, enemy_tile)
-		elif tile_allegience == KingdomStats.AllegienceType.LIKE || tile_allegience == KingdomStats.AllegienceType.ALLY :
+		elif tile_allegiance == KingdomStats.AllegienceType.LIKE or tile_allegiance == KingdomStats.AllegienceType.ALLY:
 			highlight_layer.set_cell(tile, source_id, friend_tile)
-		#
-		#if tile_kingdom.kingdom_type in selected_kingdom.likes:
-			#highlight_layer.set_cell(tile, source_id, friend_tile)
-		#elif tile_kingdom.kingdom_type in selected_kingdom.dislikes:
-			#highlight_layer.set_cell(tile, source_id, enemy_tile)
-		# If neutral, no highlight is placed (already cleared)

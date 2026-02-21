@@ -15,6 +15,10 @@ run/main_scene="uid://d0pdgcgiy8lv3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://crdm1pnputse"
+
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
@@ -22,6 +26,7 @@ DiplomacyManager="*uid://dtw0ogcq34jq0"
 Events="*uid://c6vpu2ynyo0qs"
 SceneTransition="*uid://dk45b4r5if84"
 DialogicManager="*uid://d2gs5bjn5g23t"
+AudioManager="*uid://dlwhwjjfu4t73"
 
 [dialogic]
 
@@ -33,12 +38,12 @@ directories/dtl_directory={
 "paper_greets": "res://Dialogic/Timeline/Greetings/Paper/paper_greets.dtl"
 }
 layout/style_directory={
-"": "res://Data/Style/Dialogue/dialogue_style.tres",
-"dialogue_style": "res://Data/Style/Dialogue/dialogue_style.tres"
+"": "res://Data/Style/Dialogue/norm.tres",
+"norm": "res://Data/Style/Dialogue/norm.tres"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Data/Style/Dialogue/dialogue_style.tres"]
-layout/default_style="res://Data/Style/Dialogue/dialogue_style.tres"
+layout/style_list=["res://Data/Style/Dialogue/norm.tres"]
+layout/default_style="res://Data/Style/Dialogue/norm.tres"
 variables={
 "OPINIONS": {
 "paper_cat": 0,

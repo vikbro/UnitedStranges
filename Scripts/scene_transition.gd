@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var color_rect: ColorRect = $ColorRect
 
-@export var wait_time: float = 1.0
+@export var wait_time: float = .5
 
 func fade_to_scene(scene_path: String) -> void:
 	visible = true
