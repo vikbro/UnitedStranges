@@ -19,7 +19,7 @@ func fade_to_scene(scene_path: String) -> void:
 	visible = false
 	
 
-func dissolve_to_scene(scene_path: String, transition_texture: Texture2D = null) -> void:
+func dissolve_to_level(strategy_path: String, level_scene: PackedScene, transition_texture: Texture2D = null) -> void:
 	visible = true
 	texture_rect.texture = transition_texture
 	texture_rect.visible = transition_texture != null
@@ -27,9 +27,12 @@ func dissolve_to_scene(scene_path: String, transition_texture: Texture2D = null)
 	animation_player.play_backwards("dissolve")
 	await animation_player.animation_finished
 
-	get_tree().change_scene_to_file(scene_path)
-	await get_tree().create_timer(wait_time).timeout
+	var strategy_scene = load(strategy_path).instantiate()
+	var level = level_scene.instantiate()
+	strategy_scene.add_child(level)
+	get_tree().change_scene_to_node(strategy_scene)
 
+	await get_tree().create_timer(wait_time).timeout
 	animation_player.play("dissolve")
 	await animation_player.animation_finished
 	visible = false

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cgmhuqb4diwi4"]
+
+[ext_resource type="PackedScene" uid="uid://dviw37doql5i" path="res://Scenes/Diplomats/diplomats.tscn" id="1_cgpa3"]
+[ext_resource type="Texture2D" uid="uid://7tvhoe5ru6uk" path="res://Assets/Diplomats/Walking/Bat.png" id="2_xcadh"]
+
+[node name="VampireDiplomat" unique_id=1825840023 instance=ExtResource("1_cgpa3")]
+diplomat_type = 4
+
+[node name="Sprite2D" parent="." index="0" unique_id=1696455339]
+texture = ExtResource("2_xcadh")
+hframes = 5

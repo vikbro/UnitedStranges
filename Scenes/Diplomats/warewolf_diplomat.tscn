@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://yrku37u17r7h"]
+
+[ext_resource type="PackedScene" uid="uid://dviw37doql5i" path="res://Scenes/Diplomats/diplomats.tscn" id="1_21x58"]
+[ext_resource type="Texture2D" uid="uid://ccm12fnqukr3j" path="res://Assets/Diplomats/Walking/Werewolf.png" id="2_0iarl"]
+
+[node name="WarewolfDiplomat" unique_id=1825840023 instance=ExtResource("1_21x58")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1696455339]
+texture = ExtResource("2_0iarl")

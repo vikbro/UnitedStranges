@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dviw37doql5i"]
+
+[ext_resource type="Script" uid="uid://bsrf4bll7q2eo" path="res://Scripts/diplomats.gd" id="1_2qnyn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul24o"]
+radius = 35.057095
+
+[sub_resource type="Animation" id="Animation_c8pii"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nrs6t"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_augyh"]
+_data = {
+&"RESET": SubResource("Animation_c8pii"),
+&"idle": SubResource("Animation_nrs6t")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrs6t"]
+size = Vector2(14, 12)
+
+[node name="Diplomats" type="CharacterBody2D" unique_id=1825840023]
+script = ExtResource("1_2qnyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1696455339]
+hframes = 4
+
+[node name="Area2D" type="Area2D" parent="." unique_id=187675256]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=66951910]
+shape = SubResource("CircleShape2D_ul24o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=422180909]
+libraries/ = SubResource("AnimationLibrary_augyh")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890377444]
+shape = SubResource("RectangleShape2D_nrs6t")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

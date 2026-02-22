@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b80dir4tlkc3q" path="res://Assets/Background/Paper_BG.png" id="1_na70k"]
 [ext_resource type="Texture2D" uid="uid://cdktxx46bv3lp" path="res://Assets/Banner/paper_banner.png" id="2_mf2u8"]
 [ext_resource type="Texture2D" uid="uid://dqi8nrxoy7j0" path="res://Assets/Diplomats/Portait/KingPaper_portrait.png" id="3_oomyl"]
+[ext_resource type="PackedScene" uid="uid://b1600nk5h1l83" path="res://Scenes/Conference/PaperConference.tscn" id="4_mf2u8"]
 
 [resource]
 script = ExtResource("1_ace4g")
@@ -15,4 +16,5 @@ diplomat_img = ExtResource("3_oomyl")
 background_img = ExtResource("1_na70k")
 description = "Scissors are BANNED! The papers are profficient in battle against rocks."
 banner_img = ExtResource("2_mf2u8")
+level_scene = ExtResource("4_mf2u8")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://jcwsl3010f7d" path="res://Assets/UI/swipe_menu.png" id="6_4pqbp"]
 [ext_resource type="Script" uid="uid://c6xflvasbfdi4" path="res://Scripts/UI/rich_text_gradient.gd" id="7_gih0s"]
 [ext_resource type="FontFile" uid="uid://bhyvih0pkaa2x" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills.ttf" id="7_jewm6"]
+[ext_resource type="Resource" uid="uid://kn2a4tjbdi6b" path="res://Data/Resources/Backgrounds/warewolf_bg.tres" id="7_tr32r"]
 [ext_resource type="FontFile" uid="uid://7eubtfckrpev" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Bold.ttf" id="8_cejvf"]
 [ext_resource type="FontFile" uid="uid://i0kcjtxd4bem" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Bold Italic.ttf" id="9_ru8vt"]
 [ext_resource type="FontFile" uid="uid://cnl5mcjfg8lqg" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills Italic.ttf" id="10_ypsd1"]
@@ -55,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_mrfpk")
-backgrounds = Array[ExtResource("2_q6o50")]([ExtResource("3_oslnl"), ExtResource("3_46hhv"), ExtResource("4_oslnl"), ExtResource("5_46hhv")])
+backgrounds = Array[ExtResource("2_q6o50")]([ExtResource("3_oslnl"), ExtResource("3_46hhv"), ExtResource("4_oslnl"), ExtResource("5_46hhv"), ExtResource("7_tr32r")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=257114754]
 layout_mode = 1

@@ -21,5 +21,5 @@ signal exit_level
 signal start_camera_movemnt
 signal stop_camera_movemnt
 signal area_interaction
-signal player_enter
+signal start_dialogue(npc_type:KingdomStats)
 signal enter

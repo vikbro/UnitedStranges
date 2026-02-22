@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdqirg37mufhp"]
+
+[ext_resource type="PackedScene" uid="uid://dviw37doql5i" path="res://Scenes/Diplomats/diplomats.tscn" id="1_p6fnr"]
+[ext_resource type="Texture2D" uid="uid://b1p1wa26hjvtf" path="res://Assets/Diplomats/Walking/King_paper.png" id="2_q5d4c"]
+
+[node name="PaperDiplomat" unique_id=1825840023 instance=ExtResource("1_p6fnr")]
+diplomat_type = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=1696455339]
+texture = ExtResource("2_q5d4c")

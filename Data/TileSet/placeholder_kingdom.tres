@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://byfnl1eb56cuy" path="res://Data/Resources/sun_kingdom.tres" id="3_cbndl"]
 [ext_resource type="Resource" uid="uid://c5gpi7bnxdtng" path="res://Data/Resources/vampire_kingdom.tres" id="4_c7rpd"]
 [ext_resource type="Resource" uid="uid://ci7s30u6ympdr" path="res://Data/Resources/player_kingdom.tres" id="4_cbndl"]
+[ext_resource type="Resource" uid="uid://b26brbkt54haj" path="res://Data/Resources/warewolf_kingdom.tres" id="6_1advf"]
 [ext_resource type="PackedScene" uid="uid://bv8tx1bq51fl8" path="res://Scenes/test_tile.tscn" id="6_7v3o3"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_cbndl"]
@@ -45,6 +46,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0 = 0
 3:6/size_in_atlas = Vector2i(3, 3)
 3:6/0 = 0
+3:6/0/custom_data_0 = ExtResource("6_1advf")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_c7rpd"]
 scenes/1/scene = ExtResource("6_7v3o3")

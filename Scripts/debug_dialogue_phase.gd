@@ -1,6 +1,7 @@
 extends Node
 
 const DIALOGUE_PHASE_LEVEL = "res://Scenes/Level/dialogue_phase_level.tscn"
+const LEVEL_TOP_DOWN = "res://level_top_down.tscn"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 
@@ -22,7 +23,9 @@ func _on_paper_transport_pressed() -> void:
 	await animation_player.animation_finished
 	animation_player.play("fade_out_text_panel")
 	await animation_player.animation_finished
-	
-	SceneTransition.dissolve_to_scene(DIALOGUE_PHASE_LEVEL,DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].background_img)
+
+	SceneTransition.dissolve_to_level(LEVEL_TOP_DOWN,
+	DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].level_scene,
+	DiplomacyManager.kingdoms[KingdomStats.Type.PAPER].background_img)
 	
 	pass # Replace with function body.

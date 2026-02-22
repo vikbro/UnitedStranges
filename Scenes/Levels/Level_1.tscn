@@ -110,7 +110,7 @@ tile_set = ExtResource("1_qpfou")
 
 [node name="KingdomArea" type="TileMapLayer" parent="." unique_id=949835215 node_paths=PackedStringArray("kingdom_grid")]
 position = Vector2(128, 128)
-tile_map_data = PackedByteArray("AAADAAEAAAABAAIAAAABAAAAAAAAAAIAAAABAAIAAAAAAAMAAAAGAAAAAAAAAAYAAAAHAAIAAAADAAYAAAA=")
+tile_map_data = PackedByteArray("AAADAAEAAAABAAIAAAABAAAAAAAAAAIAAAABAAIAAAAAAAMAAAAGAAAAAAAAAAYAAAAGAAIAAAADAAYAAAA=")
 tile_set = ExtResource("1_qpfou")
 script = ExtResource("2_ybqp2")
 kingdom_grid = NodePath("ArenaKingdomGrid")

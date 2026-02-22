@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="KingdomStats" format=3 uid="uid://b26brbkt54haj"]
+
+[ext_resource type="Texture2D" uid="uid://c50bdjl17rxoo" path="res://Assets/Background/warewolf_bg.png" id="1_p4cgn"]
+[ext_resource type="Texture2D" uid="uid://bo6engtr7ngy7" path="res://Assets/Banner/warewolf_banner.png" id="2_57s70"]
+[ext_resource type="Texture2D" uid="uid://dyjets66q4k1q" path="res://Assets/Diplomats/Portait/warewolf_portrait.png" id="3_12cru"]
+[ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="4_26mld"]
+
+[resource]
+script = ExtResource("4_26mld")
+opinions = Dictionary[int, int]({
+2: -30
+})
+kingdom_type = 4
+diplomat_img = ExtResource("3_12cru")
+background_img = ExtResource("1_p4cgn")
+description = "You won't like them in the night."
+banner_img = ExtResource("2_57s70")
+metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

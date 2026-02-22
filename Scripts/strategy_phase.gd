@@ -6,6 +6,9 @@ const MAIN_MENU = "res://Scenes/UI/main_menu.tscn"
 const WIN = preload("uid://y4bain7ux7d4")
 const LOSE = preload("uid://b055v31xj6ort")
 
+@onready var timer: Timer = %Timer
+
+@export var strategy_timer: int = 60
 
 func _ready() -> void:
 	#Events.enter_level.connect()
@@ -14,6 +17,9 @@ func _ready() -> void:
 	Events.level_lose.connect(_lose_level)
 	Events.enter_level.emit()
 	AudioManager.african_drums.play()
+	timer.wait_time = strategy_timer
+	timer.start()
+	timer.timeout.connect(_transport_to_conference)
 	pass
 
 func _win_level() -> void:
@@ -35,3 +41,9 @@ func _on_main_menu_btn_pressed() -> void:
 	AudioManager.button_click.play()
 	Events.exit_level.emit()
 	AudioManager.african_drums.stop()
+
+func _transport_to_conference() -> void:
+	var active_kingdoms := DiplomacyManager.get_all_kingdoms()
+	#active_kingdoms.
+	#SceneTransition.dissolve_to_level()
+	pass
