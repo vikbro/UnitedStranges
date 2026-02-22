@@ -3,7 +3,7 @@ class_name Player
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const SPEED = 100.0
+const SPEED = 300.0
 
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")

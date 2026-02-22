@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccm12fnqukr3j" path="res://Assets/Diplomats/Walking/Werewolf.png" id="2_0iarl"]
 
 [node name="WarewolfDiplomat" unique_id=1825840023 instance=ExtResource("1_21x58")]
+diplomat_type = 5
 
 [node name="Sprite2D" parent="." index="0" unique_id=1696455339]
 texture = ExtResource("2_0iarl")

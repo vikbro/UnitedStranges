@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 0.7867187, 0.14687502, 1),
+&"color": Color(1, 0.087499976, 0.9258592, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -10,21 +10,20 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "King_Paper",
-&"description": "Diplomat from the paper kingdom",
-&"display_name": "Papyrus",
+&"default_portrait": "vampire",
+&"description": "",
+&"display_name": "Vincent van Gogh",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"King_Paper": {
+"vampire": {
 "export_overrides": {
-"image": "\"res://Assets/Diplomats/Portait/KingPaper_portrait.png\""
+"image": "\"res://Assets/Diplomats/Portait/bat_portrait.png\""
 },
-"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1,
 "scene": ""
 }
 },

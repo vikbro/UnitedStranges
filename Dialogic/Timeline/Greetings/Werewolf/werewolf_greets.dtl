@@ -1,0 +1,23 @@
+label werewolf_friendly_greet
+king_werewolf: Friend! Come here — it's been too long.
+return
+
+label werewolf_neutral_greet
+king_werewolf: You came. What's going on?
+return
+
+label werewolf_anoyed_greet
+king_werewolf: You here to talk?
+return
+
+label werewolf_friendly_farewell
+king_werewolf: Travel safe. Call if you need help — I'll come running.
+return
+
+label werewolf_neutral_farewell
+king_werewolf: Take care.
+return
+
+label werewolf_anoyed_farewell
+king_werewolf: Don't cause problems on your way out.
+return

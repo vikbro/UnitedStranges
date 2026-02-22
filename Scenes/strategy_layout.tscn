@@ -22,17 +22,17 @@ shader_parameter/rotation_degrees = 48.805
 shader_parameter/threshold = 0.685
 shader_parameter/opacity = 0.2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ld4ir"]
-shader = ExtResource("10_wmmkm")
-shader_parameter/vignette_intensity = 0.2
-shader_parameter/vignette_opacity = 0.50000002375
-shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmmkm"]
 bg_color = Color(0.22959322, 0.22959325, 0.22959313, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld4ir"]
 bg_color = Color(0.91764706, 0.87058824, 0.24705882, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ld4ir"]
+shader = ExtResource("10_wmmkm")
+shader_parameter/vignette_intensity = 0.2
+shader_parameter/vignette_opacity = 0.50000002375
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_kuflx"]
 length = 0.001
@@ -179,6 +179,7 @@ _data = {
 
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 script = ExtResource("1_ym7h4")
+strategy_timer = 15
 
 [node name="Clouds" type="ColorRect" parent="." unique_id=572314179]
 z_index = 1
@@ -196,6 +197,33 @@ position_smoothing_enabled = true
 script = ExtResource("11_ld4ir")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1691035604]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=1226606432]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer2/MarginContainer" unique_id=223327611]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_wmmkm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ld4ir")
+max_value = 30.0
+value = 5.0
+fill_mode = 1
+show_percentage = false
+script = ExtResource("5_kuflx")
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer2" unique_id=1144905411]
 material = SubResource("ShaderMaterial_ld4ir")
@@ -233,16 +261,13 @@ vertical_alignment = 1
 
 [node name="MainMenuBtn" type="Button" parent="CanvasLayer2" unique_id=1529503016]
 custom_minimum_size = Vector2(150, 50)
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 54.0
 grow_horizontal = 2
-grow_vertical = 0
 text = "Return
 Menu"
 
@@ -251,34 +276,8 @@ unique_name_in_owner = true
 one_shot = true
 autostart = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=1226606432]
-custom_minimum_size = Vector2(0, 50)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -100.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer2/MarginContainer" unique_id=223327611]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_vertical = 1
-mouse_filter = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_wmmkm")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ld4ir")
-max_value = 30.0
-value = 5.0
-fill_mode = 1
-show_percentage = false
-script = ExtResource("5_kuflx")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269338331]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2038055597]
 offset_right = 40.0

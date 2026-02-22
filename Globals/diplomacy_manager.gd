@@ -46,7 +46,7 @@ func _simulate_diplomacy() -> void:
 		
 		# Pass the player's opinions dictionary
 		kingdom.calculate_player_opinion(player_kingdom.opinions)
-	DialogicManager.update_dialogic_allegience()
+	DialogicManager.update_dialogic_allegiance()
 	if check_win_condition() == true:
 		Events.level_win.emit()
 	elif check_lose_condition() == true:
@@ -55,7 +55,7 @@ func _simulate_diplomacy() -> void:
 
 
 func modify_opinion(opinon_of: KingdomStats.Type,opinion_about: KingdomStats.Type, amount: int) -> void:
-	var kingdom_of : KingdomStats = kingdoms.get(opinon_of,0)
+	var kingdom_of : KingdomStats = kingdoms.get(opinon_of)
 	
 	kingdom_of.modify_opinion(opinion_about,amount)
 	print("Opinion of %s about %s changed by %d (now %d)" % [

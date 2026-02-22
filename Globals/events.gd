@@ -23,3 +23,6 @@ signal stop_camera_movemnt
 signal area_interaction
 signal start_dialogue(npc_type:KingdomStats)
 signal enter
+
+#stupid sollution
+signal transition_load

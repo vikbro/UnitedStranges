@@ -35,28 +35,50 @@ AudioManager="*uid://dlwhwjjfu4t73"
 [dialogic]
 
 directories/dch_directory={
-"king_paper": "res://Data/Style/Dialogue/king_paper.dch"
+"king_paper": "res://Data/Style/Dialogue/king_paper.dch",
+"king_sun": "res://Dialogic/Character/king_sun.dch",
+"king_vampire": "res://Dialogic/Character/king_vampire.dch",
+"king_werewolf": "res://Dialogic/Character/king_werewolf.dch"
 }
 directories/dtl_directory={
 "paper_dialogue": "res://Dialogic/Timeline/Greetings/Paper/paper_dialogue.dtl",
-"paper_greets": "res://Dialogic/Timeline/Greetings/Paper/paper_greets.dtl"
+"paper_greets": "res://Dialogic/Timeline/Greetings/Paper/paper_greets.dtl",
+"sun_dialogue": "res://Dialogic/Timeline/Greetings/Sun/sun_dialogue.dtl",
+"sun_greets": "res://Dialogic/Timeline/Greetings/Sun/sun_greets.dtl",
+"vampire_dialogue": "res://Dialogic/Timeline/Greetings/Vampire/vampire_dialogue.dtl",
+"vampire_greet": "res://Dialogic/Timeline/Greetings/Vampire/vampire_greets.dtl",
+"werewolf_dialogue": "res://Dialogic/Timeline/Greetings/Werewolf/werewolf_dialogue.dtl",
+"werewolf_greets": "res://Dialogic/Timeline/Greetings/Werewolf/werewolf_greets.dtl"
 }
 layout/style_directory={
-"": "res://Data/Style/Dialogue/visual_novel.tres",
-"speaker_textbox": "res://Data/Style/Dialogue/speaker_textbox.tres",
-"visual_novel": "res://Data/Style/Dialogue/visual_novel.tres"
+"": "res://Dialogic/character_box.tres",
+"character_box": "res://Dialogic/character_box.tres"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Data/Style/Dialogue/visual_novel.tres", "res://Data/Style/Dialogue/speaker_textbox.tres"]
-layout/default_style="res://Data/Style/Dialogue/visual_novel.tres"
+layout/style_list=["res://Dialogic/character_box.tres"]
+layout/default_style="res://Dialogic/character_box.tres"
 variables={
 "OPINIONS": {
-"paper_cat": 0,
-"paper_moon": 0,
 "paper_player": 0,
-"player_cat": 0,
-"player_moon": 0,
-"player_paper": 4
+"paper_sun": 0,
+"paper_vampire": 0,
+"paper_werewolf": 0,
+"player_paper": 0,
+"player_sun": 0,
+"player_vampire": 0,
+"player_werewolf": 0,
+"sun_paper": 0,
+"sun_player": 0,
+"sun_vampire": 0,
+"sun_werewofl": 0,
+"vampire_paper": 0,
+"vampire_player": 0,
+"vampire_sun": 0,
+"vampire_werewolf": 0,
+"werewolf_paper": 0,
+"werewolf_player": 0,
+"werewolf_sun": 0,
+"werewolf_vampire": 0
 }
 }
 

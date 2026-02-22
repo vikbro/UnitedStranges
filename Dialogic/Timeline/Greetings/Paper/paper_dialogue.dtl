@@ -1,15 +1,86 @@
-king_paper: THIS IS AN [shake rate=20.0 level=5 connected=1] EFFECT [/shake]
-if {OPINIONS.paper_player} == 3.0 || {OPINIONS.paper_player} == 4.0:
+if {OPINIONS.paper_player} >= 3:
 	jump paper_greets/paper_friendly_greet
-elif {OPINIONS.paper_player} == 0.0 || {OPINIONS.paper_player} == 1.0:
+elif {OPINIONS.paper_player} <= 1:
 	jump paper_greets/paper_anoyed_greet
 else:
 	jump paper_greets/paper_neutral_greet
-king_paper: this is the following dialogue
-king_paper: Do you like Moon?
-- Yes
-	do DiplomacyManager.modify_opinion(0, 3, 20)
-- NO
-	do DiplomacyManager.modify_opinion(0, 3, -20)
-king_paper: Interesting
-king_paper: Goodbye!
+
+# CATEGORY 1: SUN
+if {OPINIONS.paper_sun} <= 1:
+	king_paper: Pray tell, doth the Kingdom of the Sun find favor in thine eyes?
+	- No, not really, I am more of an indoorsy person.
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_paper: A kindred spirit! The indoors doth protect mine precious pages!
+	- I haven't heard anything about that kingdom.
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_paper: Verily, thou art most uninformed. 'Tis perhaps for the best.
+	- Of course, it helps making a killer tan!
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_paper: [shake rate=5.0 level=3 connected=1] A TAN?! [/shake] Dost thou have ANY idea what the sun doth to parchment?!
+else:
+	king_paper: Hark, the sun doth shine brightly each day. 'Tis why my people may hoard knowledge and read it. Education is a boon most fair. Pray tell, do you not revel in the sun's endless gifts?
+	- I do appreciate the sunny days!
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_paper: Splendid! A most enlightened perspective, dear King!
+	- …
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_paper: [speed=0.5] ...Indeed. [/speed]
+	- Ever heard of lamps?
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_paper: [shake rate=10.0 level=4 connected=1] LAMPS?! [/shake] Thou wouldst replace the glory of the sun with a... a LAMP?!
+
+# CATEGORY 2: VAMPIRES
+if {OPINIONS.paper_vampire} <= 1:
+	king_paper: By my honor, realms blessed with eternally living souls are far superior! They lack the base desires of us mortals. Wouldst thou not concur?
+	- Yeah, that's environmentally friendly….! Like the Moon!
+		do DiplomacyManager.modify_opinion(0, 4, 20)
+		king_paper: Verily! Thou speakest with great wisdom, dear King!
+	- Yeah, I guess being a piece of paper has its advantages.
+		do DiplomacyManager.modify_opinion(0, 4, 0)
+		king_paper: [speed=0.2] I... yes. Quite. [/speed]
+	- Yeah, well I guess vampires are privileged like you!
+		do DiplomacyManager.modify_opinion(0, 4, -20)
+		king_paper: How DARE thou compare mine noble kingdom to those blood-drinking fiends!
+else:
+	king_paper: Hark, what say you of this vampiric kingdom? Blood, aye, but do they possess nobility? A matter most contentious, wouldst thou not agree?
+	- Class needs sacrifices!
+		do DiplomacyManager.modify_opinion(0, 4, 20)
+		king_paper: Ha! A most pragmatic view. I shall ponder upon it.
+	- What do you care about blood? You don't really have any…
+		do DiplomacyManager.modify_opinion(0, 4, 0)
+		king_paper: [speed=0.3] I... well... that is... [/speed] Moving on!
+	- Blood?? But that's murder!
+		do DiplomacyManager.modify_opinion(0, 4, -20)
+		king_paper: PRECISELY! Thou art most correct! A most ghastly kingdom indeed!
+
+# CATEGORY 3: WEREWOLVES
+if {OPINIONS.paper_warewolf} <= 1:
+	king_paper: Hark, I have heard tell of realms haunted by werewolves, wild tales indeed! How starkly they contrast with the lands of my birth!
+	- I agree, some people don't know how to keep it together.
+		do DiplomacyManager.modify_opinion(0, 5, 20)
+		king_paper: Well spoken! Dignity and composure are the marks of true nobility!
+	- Lol, aren't you noisy, Lord Papyrus!
+		do DiplomacyManager.modify_opinion(0, 5, 0)
+		king_paper: [speed=0.2] I... Lord Papyrus?... I suppose that hath a certain ring to it. [/speed]
+	- Ha, so the Kingdom of the Moon must be ashamed then.
+		do DiplomacyManager.modify_opinion(0, 5, -20)
+		king_paper: [shake rate=8.0 level=3 connected=1] The Moon Kingdom is a most honourable ally! [/shake] Thou shalt not besmirch their name!
+else:
+	king_paper: Verily, simplicity doth underpin all! Pray tell, which kingdom dost thou deem most skilled in cleanness and plainness?
+	- The werewolves are chill and all… so they must be the right answer!
+		do DiplomacyManager.modify_opinion(0, 5, 20)
+		king_paper: A fair assessment! Even the wild may possess a humble grace!
+	- Yours?
+		do DiplomacyManager.modify_opinion(0, 5, 0)
+		king_paper: [speed=0.5] Well... I mean... yes. Obviously. But 'twas a rhetorical question. [/speed]
+	- The Kingdom of the Moon must be the correct answer!
+		do DiplomacyManager.modify_opinion(0, 5, -20)
+		king_paper: The Moon?! Over mine own kingdom?! I am most grievously offended!
+
+# FAREWELL
+if {OPINIONS.paper_player} >= 3:
+	jump paper_greets/paper_friendly_farewell
+elif {OPINIONS.paper_player} <= 1:
+	jump paper_greets/paper_anoyed_farewell
+else:
+	jump paper_greets/paper_neutral_farewell

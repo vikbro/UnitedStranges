@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="2_ioxb0"]
 [ext_resource type="Texture2D" uid="uid://cgx72evaah1yj" path="res://Assets/Banner/vampire_banner.png" id="2_ubhom"]
 [ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="3_ubhom"]
+[ext_resource type="PackedScene" uid="uid://b1600nk5h1l83" path="res://Scenes/Conference/PaperConference.tscn" id="4_ubhom"]
 
 [resource]
 script = ExtResource("3_ubhom")
@@ -15,4 +16,5 @@ diplomat_img = ExtResource("2_ioxb0")
 background_img = ExtResource("1_ioxb0")
 description = "Vampires are actually chill no need to be scared."
 banner_img = ExtResource("2_ubhom")
+level_scene = ExtResource("4_ubhom")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

@@ -18,8 +18,8 @@ func fade_to_scene(scene_path: String) -> void:
 	await animation_player.animation_finished
 	visible = false
 	
-
-func dissolve_to_level(strategy_path: String, level_scene: PackedScene, transition_texture: Texture2D = null) -> void:
+#To top-down
+func dissolve_to_level(strategy_path: String, level_scene: PackedScene, transition_texture: Texture2D, level_num: int) -> void:
 	visible = true
 	texture_rect.texture = transition_texture
 	texture_rect.visible = transition_texture != null
@@ -29,6 +29,7 @@ func dissolve_to_level(strategy_path: String, level_scene: PackedScene, transiti
 
 	var strategy_scene = load(strategy_path).instantiate()
 	var level = level_scene.instantiate()
+	strategy_scene.called_from_level = level_num
 	strategy_scene.add_child(level)
 	get_tree().change_scene_to_node(strategy_scene)
 
@@ -37,13 +38,15 @@ func dissolve_to_level(strategy_path: String, level_scene: PackedScene, transiti
 	await animation_player.animation_finished
 	visible = false
 
-func fade_to_level(strategy_path: String, level_path: String) -> void:
+#To Strategy_scene
+func fade_to_level(strategy_path: String, level_path: String,level_num: int) -> void:
 	visible = true
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 
 	# Load and instantiate the strategy layout
 	var strategy_scene = load(strategy_path).instantiate()
+	strategy_scene.current_level = level_num
 
 	# Load and instantiate the level tile
 	var level_scene = load(level_path).instantiate()
@@ -58,3 +61,5 @@ func fade_to_level(strategy_path: String, level_path: String) -> void:
 	animation_player.play_backwards("fade_to_black")
 	await animation_player.animation_finished
 	visible = false
+	Events.transition_load.emit()
+	return

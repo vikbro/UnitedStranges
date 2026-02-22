@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://e4ga76emhdtv" path="res://Assets/Banner/sun_banner.png" id="2_gb8pt"]
 [ext_resource type="Texture2D" uid="uid://c78sjj1wwpib6" path="res://Assets/Diplomats/Portait/sun_portrait.png" id="2_qwurt"]
 [ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="3_gb8pt"]
+[ext_resource type="PackedScene" uid="uid://b1600nk5h1l83" path="res://Scenes/Conference/PaperConference.tscn" id="4_gb8pt"]
 
 [resource]
 script = ExtResource("3_gb8pt")
@@ -15,4 +16,5 @@ diplomat_img = ExtResource("2_qwurt")
 background_img = ExtResource("1_qwurt")
 description = "The SUN is a deadly LASER."
 banner_img = ExtResource("2_gb8pt")
+level_scene = ExtResource("4_gb8pt")
 metadata/_custom_type_script = "uid://c0ap6gdhqu3y3"

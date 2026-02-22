@@ -48,6 +48,8 @@ _data = {
 size = Vector2(14, 12)
 
 [node name="Diplomats" type="CharacterBody2D" unique_id=1825840023]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_2qnyn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1696455339]

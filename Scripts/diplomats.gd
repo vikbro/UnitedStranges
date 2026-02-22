@@ -8,5 +8,6 @@ func _ready() -> void:
 	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	Events.start_dialogue.emit(diplomat_type)
 	#Events.player_enter.emit(diplomat_type)
 	pass

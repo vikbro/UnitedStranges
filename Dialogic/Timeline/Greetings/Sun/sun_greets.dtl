@@ -1,0 +1,23 @@
+label sun_friendly_greet
+king_sun: AH! MY FAVORITE WITNESS TO GREATNESS RETURNS!
+return
+
+label sun_neutral_greet
+king_sun: YOU AGAIN. WHAT DO YOU NEED?
+return
+
+label sun_anoyed_greet
+king_sun: YOU'VE GOT NERVE SHOWING UP HERE.
+return
+
+label sun_friendly_farewell
+king_sun: COME BACK — I DISLIKE SHINING WITHOUT AN AUDIENCE.
+return
+
+label sun_neutral_farewell
+king_sun: GO ON. I HAVE THINGS TO IGNITE.
+return
+
+label sun_anoyed_farewell
+king_sun: DON'T COME BACK UNLESS YOU HAVE A GOOD REASON.
+return
