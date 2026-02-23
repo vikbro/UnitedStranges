@@ -11,13 +11,13 @@ bg_color = Color(0.91764706, 0.87058824, 0.24705882, 1)
 
 [node name="Level" type="Node2D" unique_id=2026976430]
 script = ExtResource("1_hrc0o")
-round_time_sec = 5
+round_time_sec = 40
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1610486229]
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=577849961]
 unique_name_in_owner = true
-wait_time = 5.0
+wait_time = 40.0
 one_shot = true
 autostart = true
 

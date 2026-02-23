@@ -48,7 +48,7 @@ func _transition_to_strategy() -> void:
 		SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_1,1)
 	elif called_from_level == 2:
 		SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_2,2)
-	
+	 
 	elif called_from_level == 3:
 		pass
 	pass

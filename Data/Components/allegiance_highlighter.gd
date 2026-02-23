@@ -4,6 +4,7 @@ class_name AllegianceHighlighter
 @export var enabled: bool = true : set = _set_enabled
 @export var play_area: PlayArea
 @export var highlight_layer: TileMapLayer
+
 @export var ALLY_tile: Vector2i
 @export var FRIEND_tile: Vector2i
 @export var DISLIKE_tile: Vector2i
@@ -66,7 +67,7 @@ func _update_all_tiles() -> void:
 			highlight_layer.set_cell(tile, source_id, ENEMY_tile)
 		elif tile_allegiance == KingdomStats.AllegienceType.DISLIKE:
 			highlight_layer.set_cell(tile, source_id, DISLIKE_tile)
-		if tile_allegiance == KingdomStats.AllegienceType.LIKE:
-			highlight_layer.set_cell(tile, source_id, FRIEND_tile)
+		elif tile_allegiance == KingdomStats.AllegienceType.LIKE:
+			highlight_layer.set_cell(tile, source_id, Vector2i(3,2))
 		elif tile_allegiance == KingdomStats.AllegienceType.ALLY:
-			highlight_layer.set_cell(tile, source_id, ALLY_tile)
+			highlight_layer.set_cell(tile, source_id, Vector2i(2,1))

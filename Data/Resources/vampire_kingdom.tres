@@ -9,8 +9,9 @@
 [resource]
 script = ExtResource("3_ubhom")
 opinions = Dictionary[int, int]({
-0: 5,
-2: -30
+0: 0,
+2: -20,
+4: 10
 })
 kingdom_type = 4
 diplomat_img = ExtResource("2_ioxb0")

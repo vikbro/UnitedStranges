@@ -179,7 +179,7 @@ _data = {
 
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 script = ExtResource("1_ym7h4")
-strategy_timer = 5
+strategy_timer = 15
 
 [node name="Clouds" type="ColorRect" parent="." unique_id=572314179]
 z_index = 1
