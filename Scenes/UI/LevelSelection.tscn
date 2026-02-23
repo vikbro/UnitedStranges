@@ -2,6 +2,68 @@
 
 [ext_resource type="FontFile" uid="uid://bhyvih0pkaa2x" path="res://Data/Fonts/hollywood_hills/SF Hollywood Hills.ttf" id="1_bodif"]
 [ext_resource type="Script" uid="uid://c6xnvoc5ac55n" path="res://Scenes/UI/level_selection.gd" id="1_m2yfs"]
+[ext_resource type="Texture2D" uid="uid://ttwlqeafo7b3" path="res://Assets/UI/allegiance_info.png" id="3_0yt1a"]
+
+[sub_resource type="Animation" id="Animation_pnsx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lyrh5"]
+resource_name = "show_tip"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nu2pu"]
+_data = {
+&"RESET": SubResource("Animation_pnsx7"),
+&"show_tip": SubResource("Animation_lyrh5")
+}
 
 [node name="LevelSelection" type="Control" unique_id=1466528708]
 layout_mode = 3
@@ -136,6 +198,64 @@ layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 text = "test"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=224181813]
+libraries/ = SubResource("AnimationLibrary_nu2pu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=151514626]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0yt1a")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=2095648870]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 187.0
+offset_right = 1132.0
+offset_bottom = 459.0
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer" unique_id=2082761162]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "ALLY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect/VBoxContainer" unique_id=1884070661]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "FRIEND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="TextureRect/VBoxContainer" unique_id=1530747626]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "OPONENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="TextureRect/VBoxContainer" unique_id=546850267]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "ENEMY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1359456476]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 32.0
+offset_right = 670.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 64
+text = "TIP"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer/Lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer2/Lvl2" to="." method="_on_lvl_2_pressed"]

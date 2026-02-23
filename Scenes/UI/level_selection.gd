@@ -4,10 +4,13 @@ const MAIN_MENU = "res://Scenes/UI/main_menu.tscn"
 const LEVEL_1 = "res://Scenes/Levels/Level_1.tscn"
 const LEVEL_2 = "res://Scenes/Levels/Level_2.tscn"
 const STRATEGY_LAYOUT = "res://Scenes/strategy_layout.tscn"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _on_lvl_1_pressed() -> void:
+	animation_player.play("show_tip")
 	AudioManager.button_click.play()
+	await animation_player.animation_finished
 	SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_1,1)
 	Events.transition_load.connect(Events.enter_level.emit)
 	#Events.enter_level.emit()
@@ -17,7 +20,9 @@ func _on_lvl_1_pressed() -> void:
 
 
 func _on_lvl_2_pressed() -> void:
+	animation_player.play("show_tip")
 	AudioManager.button_click.play()
+	await animation_player.animation_finished
 	SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_2,2)
 	Events.transition_load.connect(Events.enter_level.emit)
 
