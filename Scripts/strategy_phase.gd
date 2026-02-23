@@ -23,7 +23,10 @@ func _ready() -> void:
 	timer.wait_time = strategy_timer
 	timer.start()
 	timer.timeout.connect(_transport_to_conference)
-	pass
+	if DiplomacyManager.check_win_condition() == true:
+		Events.level_win.emit()
+	elif DiplomacyManager.check_lose_condition() == true:
+		Events.level_lose.emit()
 
 func _win_level() -> void:
 	var instance = WIN.instantiate()

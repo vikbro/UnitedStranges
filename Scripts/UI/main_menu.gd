@@ -2,6 +2,7 @@ extends Control
 
 @onready var layer_1: Control = $LayeredBackgorund1
 @onready var layer_2: Control = $LayeredBackgorund2
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const LEVEL_SELECTION = "res://Scenes/UI/LevelSelection.tscn"
 
@@ -46,6 +47,9 @@ func _ready() -> void:
 
 	layer_1.modulate.a = 1.0
 	layer_2.modulate.a = 0.0
+	animation_player.play("show_slogan")
+	await animation_player.animation_finished
+	AudioManager.intro.play()
 
 func _physics_process(delta: float) -> void:
 	_update_parallax(delta)

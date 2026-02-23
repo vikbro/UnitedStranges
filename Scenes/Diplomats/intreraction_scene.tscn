@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjrbhue6fbeka"]
+
+[ext_resource type="PackedScene" uid="uid://cdqirg37mufhp" path="res://Scenes/Diplomats/paper_diplomat.tscn" id="1_kidqi"]
+[ext_resource type="PackedScene" uid="uid://bxlyf06n1cd2t" path="res://Scenes/Diplomats/sun_diplomat.tscn" id="2_00cvh"]
+[ext_resource type="PackedScene" uid="uid://bfk1qlqtfa43c" path="res://Scenes/player_movement.tscn" id="3_w38ho"]
+
+[node name="Intreraction Scene" type="Node2D" unique_id=958268186]
+
+[node name="PaperDiplomat" parent="." unique_id=1825840023 instance=ExtResource("1_kidqi")]
+position = Vector2(295, 86)
+
+[node name="SunDiplomat" parent="." unique_id=1128106101 instance=ExtResource("2_00cvh")]
+position = Vector2(94, 136)
+
+[node name="CharacterBody2D" parent="." unique_id=427762135 instance=ExtResource("3_w38ho")]

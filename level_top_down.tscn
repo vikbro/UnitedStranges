@@ -11,13 +11,13 @@ bg_color = Color(0.91764706, 0.87058824, 0.24705882, 1)
 
 [node name="Level" type="Node2D" unique_id=2026976430]
 script = ExtResource("1_hrc0o")
-round_time_sec = 10
+round_time_sec = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1610486229]
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=577849961]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -38,10 +38,34 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_xbkh0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lnb26")
-max_value = 30.0
+max_value = 40.0
 value = 5.0
 fill_mode = 1
 show_percentage = false
 script = ExtResource("4_xbkh0")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=764214767]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer2" unique_id=1906830420]
+layout_mode = 2
+text = "Diplomacy phase:
+
+- Find the diplomats and talk
+with them
+
+- Choose the corect answers 
+in order to gain trust 
+
+- Wait for timer to run out and 
+enter \"Strategy phase\"
+
+-WASD for movement
+"
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]

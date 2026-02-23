@@ -102,7 +102,12 @@ _data = {
 &"walk_up": SubResource("Animation_hjxs2")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4nywd"]
+radius = 35.057095
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=427762135]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_4nywd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=155912236]
@@ -118,3 +123,10 @@ zoom = Vector2(2, 2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=682709072]
 libraries/ = SubResource("AnimationLibrary_shqwv")
+
+[node name="npc_dialogue" type="Area2D" parent="." unique_id=1565761114]
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_dialogue" unique_id=376789172]
+shape = SubResource("CircleShape2D_4nywd")

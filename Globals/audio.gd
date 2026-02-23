@@ -7,6 +7,7 @@ extends Node
 @onready var win: AudioStreamPlayer = $Win
 @onready var lose: AudioStreamPlayer = $Lose
 @onready var african_drums: AudioStreamPlayer = $AfricanDrums
+@onready var intro: AudioStreamPlayer = $Intro
 
 func _ready() -> void:
 	#Events.button_click.connect(button_click.play)

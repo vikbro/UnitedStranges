@@ -9,37 +9,37 @@ else:
 if {OPINIONS.sun_paper} <= 1:
 	king_sun: [shake rate=10.0 level=5 connected=1] I WANNA BURN THIS PLACE TO THE GROUND! [/shake] HOW ABOUT WE TORCH SOME DAMN DEADWOOD, HUH?!
 	- Lol, count me in.
-		do DiplomacyManager.modify_opinion(0, 0, 20)
+		do DiplomacyManager.modify_opinion(0, 1, -20)
 		king_sun: NOW WE'RE TALKING! I KNEW I LIKED YOU!
 	- ugh, you good?
-		do DiplomacyManager.modify_opinion(0, 0, 0)
+		do DiplomacyManager.modify_opinion(0, 1, 0)
 		king_sun: [speed=0.5] ...I'M FINE. [/speed] WHAT'S IT TO YOU.
 	- *GASP* Are you talking about our neighbor Paper Kingdom?!
-		do DiplomacyManager.modify_opinion(0, 0, -20)
+		do DiplomacyManager.modify_opinion(0, 1, 20)
 		king_sun: [shake rate=15.0 level=6 connected=1] DON'T DEFEND THEM TO MY FACE! [/shake]
 else:
 	king_sun: [shake rate=8.0 level=4 connected=1] I'M A GODDAMN BULL IN A CHINA SHOP! I'M TORCHING EVERYTHING! [/shake] MY SO-CALLED ALLIES ARE GONNA FREAKING KILL ME!
 	- I am sure flammable kingdoms will understand. They are delicate but also strong in their own way!
-		do DiplomacyManager.modify_opinion(0, 0, 20)
+		do DiplomacyManager.modify_opinion(0, 1, 20)
 		king_sun: [speed=0.4] ...hm. [/speed] FINE. MAYBE I OVERREACTED. SLIGHTLY.
 	- Ouch! Hey, watch it! You almost burnt me too!
-		do DiplomacyManager.modify_opinion(0, 0, 0)
+		do DiplomacyManager.modify_opinion(0, 1, 0)
 		king_sun: COLLATERAL DAMAGE! IT HAPPENS! WALK IT OFF!
 	- Why would you even have such allies? What strategy is even that?
-		do DiplomacyManager.modify_opinion(0, 0, -20)
+		do DiplomacyManager.modify_opinion(0, 1, -20)
 		king_sun: [shake rate=12.0 level=5 connected=1] ARE YOU QUESTIONING MY JUDGMENT?! [/shake] I ALWAYS HAVE A STRATEGY!
 
 # CATEGORY 2: VAMPIRES
 if {OPINIONS.sun_vampire} <= 1:
 	king_sun: THESE PRETENTIOUS NIGHT CRAWLERS THINK THEY'RE SO ELEGANT! HIDING FROM THE SUN LIKE COWARDS! WHAT KIND OF RULER NEEDS DARKNESS JUST TO EXIST?!
 	- They hide because your power is overwhelming. You dominate the sky.
-		do DiplomacyManager.modify_opinion(0, 4, 20)
+		do DiplomacyManager.modify_opinion(0, 4, -20)
 		king_sun: [speed=0.3] ...DAMN RIGHT I DO. [/speed] FINALLY SOMEONE GETS IT.
 	- They just prefer night. Different environment, that's all.
 		do DiplomacyManager.modify_opinion(0, 4, 0)
 		king_sun: "DIFFERENT ENVIRONMENT." THAT'S A GENEROUS WAY TO SAY INFERIOR.
 	- Honestly… they are more refined than you.
-		do DiplomacyManager.modify_opinion(0, 4, -20)
+		do DiplomacyManager.modify_opinion(0, 4, 20)
 		king_sun: [shake rate=20.0 level=6 connected=1] GET OUT. GET OUT RIGHT NOW. [/shake]
 else:
 	king_sun: VAMPIRES! THEY CALLED MY RADIANCE "OVERWHELMING." I THINK THEY MEANT IT AS PRAISE.
@@ -54,16 +54,16 @@ else:
 		king_sun: [shake rate=10.0 level=4 connected=1] IT WAS NOT CRITICISM. [/shake] TAKE THAT BACK.
 
 # CATEGORY 3: WEREWOLVES
-if {OPINIONS.sun_warewolf} <= 1:
+if {OPINIONS.sun_werewolf} <= 1:
 	king_sun: THEY BREAK THINGS WITHOUT THINKING! WHEN I DESTROY SOMETHING, IT MEANS SOMETHING! WHAT IS THAT WEREWOLF KINGDOM ANYWAY??
 	- Your power has purpose. Theirs is just instinct.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
+		do DiplomacyManager.modify_opinion(0, 5, -20)
 		king_sun: PURPOSE. YES. WRITE THAT DOWN. THERE IS A DIFFERENCE.
 	- They act on emotion more than planning.
 		do DiplomacyManager.modify_opinion(0, 5, 0)
 		king_sun: EMOTION WITHOUT DIRECTION IS JUST CHAOS. I HAVE BOTH.
 	- Destruction is destruction. Same thing.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
+		do DiplomacyManager.modify_opinion(0, 5, 20)
 		king_sun: [shake rate=15.0 level=6 connected=1] IT IS NOT THE SAME THING!! [/shake] DO NOT EVER SAY THAT AGAIN.
 else:
 	king_sun: HEY! YOU WON'T BELIEVE WHAT JUST HAPPENED. I TALKED TO A PACK OF WEREWOLVES. ONE OF THEM SAID MY RAGE IS "HONEST." …NO ONE EVER SAYS THAT.

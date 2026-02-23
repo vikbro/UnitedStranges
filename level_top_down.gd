@@ -36,11 +36,14 @@ func _interaction():
 
 
 func _on_timer_timeout() -> void:
+	DiplomacyManager._simulate_diplomacy()
 	Dialogic.end_timeline()
 	_transition_to_strategy()
 	#SceneTransition.fade_to_scene("res://Scenes/UI/main_menu.tscn")
 
 func _transition_to_strategy() -> void:
+	#DiplomacyManager._simulate_diplomacy()
+	
 	if called_from_level == 1:
 		SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_1,1)
 	elif called_from_level == 2:

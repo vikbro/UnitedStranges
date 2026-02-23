@@ -9,6 +9,10 @@
 [ext_resource type="Script" uid="uid://dkybll4p6p7tl" path="res://Scripts/kingdom_info.gd" id="6_ducwx"]
 [ext_resource type="Texture2D" uid="uid://v0cav8010rxn" path="res://Assets/Background/Normal_BG.png" id="7_ducwx"]
 [ext_resource type="Texture2D" uid="uid://cdktxx46bv3lp" path="res://Assets/Banner/paper_banner.png" id="7_iyh3f"]
+[ext_resource type="LabelSettings" uid="uid://hj6mjei6qcw2" path="res://Data/Label/debug_label.tres" id="10_8nmnw"]
+[ext_resource type="Script" uid="uid://c1jpvr0ejg48t" path="res://Scripts/debug_ui.gd" id="11_ngxpw"]
+[ext_resource type="Script" uid="uid://525ab0vwem67" path="res://Scripts/debug_dialogue.gd" id="12_trw0a"]
+[ext_resource type="Script" uid="uid://blx7idcm33esw" path="res://Scripts/debug_dialogue_phase.gd" id="13_tjcye"]
 
 [sub_resource type="Animation" id="Animation_iyh3f"]
 length = 0.001
@@ -105,16 +109,15 @@ _data = {
 script = ExtResource("1_hs11j")
 
 [node name="Background" type="TileMapLayer" parent="Visuals" unique_id=266518450]
-tile_map_data = PackedByteArray("AAAAAAAAAAAEAAIAAAAAAAIAAAAEAAIAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAIAAAABAAAAAAAEAAIAAAABAAQAAAAEAAIAAAACAAAAAAAEAAIAAAACAAIAAAAEAAAAAAACAAQAAAAEAAIAAAADAAAAAAAEAAIAAAADAAIAAAAEAAAAAAADAAMAAAAEAAAAAAADAAQAAAAEAAIAAAAEAAIAAAAEAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAIAAAAFAAAAAAAEAAIAAAAFAAEAAAAEAAAAAAAFAAIAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAIAAAAGAAAAAAAFAAMAAAAGAAIAAAAFAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAIAAAAHAAAAAAAFAAAAAAAHAAEAAAAFAAIAAAAHAAIAAAAFAAEAAAAHAAMAAAAFAAMAAAAHAAQAAAAEAAIAAAAIAAAAAAAFAAMAAAAIAAEAAAAFAAAAAAAIAAIAAAAFAAMAAAAIAAMAAAAFAAMAAAAIAAQAAAAEAAIAAAAAAAUAAAAEAAEAAAABAAUAAAAEAAEAAAACAAUAAAAEAAEAAAADAAUAAAAEAAEAAAAEAAUAAAAEAAEAAAAFAAUAAAAEAAEAAAAGAAUAAAAEAAEAAAAHAAUAAAAEAAEAAAAIAAUAAAAEAAEAAAAEAAAAAAAEAAIAAAABAAEAAAAEAAAAAAAAAAEAAAAEAAIAAAACAAEAAAAEAAAAAAADAAEAAAAEAAAAAAAEAAEAAAAEAAAAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAEAAAD//wUAAAAEAAEAAAD//wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAEAAAD///7/AAAEAAEAAAAAAP7/AAAEAAEAAAABAP7/AAAEAAEAAAACAP7/AAAEAAEAAAADAP7/AAAEAAEAAAAEAP7/AAAEAAEAAAAEAP//AAAEAAEAAAAFAP//AAAEAAEAAAAGAP//AAAEAAEAAAAHAP//AAAEAAEAAAAIAP//AAAEAAEAAAAJAP//AAAEAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAHAP7/AAAEAAEAAAAGAP7/AAAEAAEAAAAFAP7/AAAEAAEAAAACAP//AAAEAAEAAAADAP//AAAEAAEAAAABAP//AAAEAAEAAAAAAP//AAAEAAEAAAD+////AAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD8//7/AAAEAAEAAAD+//7/AAAEAAEAAAD8////AAAEAAEAAAD8/wAAAAAEAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD+/wEAAAAEAAEAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAEAAAD8/wIAAAAEAAEAAAD8/wMAAAAEAAEAAAD8/wQAAAAEAAEAAAD8/wUAAAAEAAEAAAD9/wIAAAAEAAEAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD9/wUAAAAEAAEAAAD+/wQAAAAEAAEAAAD+/wUAAAAEAAEAAAD8/wYAAAAEAAEAAAD8/wcAAAAEAAEAAAD9/wYAAAAEAAEAAAD9/wcAAAAEAAEAAAD+/wYAAAAEAAEAAAD+/wcAAAAEAAEAAAD//wYAAAAEAAEAAAD//wcAAAAEAAEAAAD8/wgAAAAEAAEAAAD9/wgAAAAEAAEAAAD+/wgAAAAEAAEAAAD//wgAAAAEAAEAAAAAAAYAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAgAAAAEAAEAAAABAAYAAAAEAAEAAAABAAcAAAAEAAEAAAABAAgAAAAEAAEAAAACAAYAAAAEAAEAAAACAAcAAAAEAAEAAAACAAgAAAAEAAEAAAADAAYAAAAEAAEAAAADAAcAAAAEAAEAAAADAAgAAAAEAAEAAAAEAAYAAAAEAAEAAAAEAAcAAAAEAAEAAAAEAAgAAAAEAAEAAAAFAAYAAAAEAAEAAAAFAAcAAAAEAAEAAAAFAAgAAAAEAAEAAAAGAAYAAAAEAAEAAAAGAAcAAAAEAAEAAAAGAAgAAAAEAAEAAAAHAAYAAAAEAAEAAAAHAAcAAAAEAAEAAAAHAAgAAAAEAAEAAAAIAAYAAAAEAAEAAAAIAAcAAAAEAAEAAAAIAAgAAAAEAAEAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAAJAAgAAAAEAAEAAAAKAAUAAAAEAAEAAAAKAAYAAAAEAAEAAAAKAAcAAAAEAAEAAAAKAAgAAAAEAAEAAAALAAUAAAAEAAEAAAALAAYAAAAEAAEAAAALAAcAAAAEAAEAAAALAAgAAAAEAAEAAAAMAAUAAAAEAAEAAAAMAAYAAAAEAAEAAAAMAAcAAAAEAAEAAAAMAAgAAAAEAAEAAAAJAP3/AAAEAAEAAAAKAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAAKAP//AAAEAAEAAAAKAAAAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAIAAAAEAAEAAAAKAAMAAAAEAAEAAAAKAAQAAAAEAAEAAAALAP3/AAAEAAEAAAALAP7/AAAEAAEAAAALAP//AAAEAAEAAAALAAAAAAAEAAEAAAALAAEAAAAEAAEAAAALAAIAAAAEAAEAAAALAAMAAAAEAAEAAAALAAQAAAAEAAEAAAAMAP3/AAAEAAEAAAAMAP7/AAAEAAEAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAEAAAAMAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAEAAAAJAPz/AAAEAAEAAAAKAPz/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAD8//z/AAAEAAEAAAD8//3/AAAEAAEAAAD9//z/AAAEAAEAAAD9//3/AAAEAAEAAAD+//z/AAAEAAEAAAD+//3/AAAEAAEAAAD///z/AAAEAAEAAAD///3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAP3/AAAEAAEAAAABAPz/AAAEAAEAAAABAP3/AAAEAAEAAAACAPz/AAAEAAEAAAACAP3/AAAEAAEAAAADAPz/AAAEAAEAAAADAP3/AAAEAAEAAAAEAPz/AAAEAAEAAAAEAP3/AAAEAAEAAAAFAPz/AAAEAAEAAAAFAP3/AAAEAAEAAAAGAPz/AAAEAAEAAAAGAP3/AAAEAAEAAAAHAPz/AAAEAAEAAAAHAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAP3/AAAEAAEAAAACAAMAAAAEAAAAAAABAAMAAAAEAAAAAAABAAIAAAAEAAAAAAAGAAEAAAAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAIAAAAAAAIAAAAEAAIAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAIAAAABAAAAAAAEAAIAAAABAAQAAAAEAAIAAAACAAAAAAAEAAIAAAACAAIAAAAEAAAAAAACAAQAAAAEAAIAAAADAAAAAAAEAAIAAAADAAIAAAAEAAAAAAADAAMAAAAEAAAAAAADAAQAAAAEAAIAAAAEAAIAAAAEAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAIAAAAFAAAAAAAEAAIAAAAFAAEAAAAEAAAAAAAFAAIAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAIAAAAGAAAAAAAEAAIAAAAGAAIAAAAEAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAIAAAAHAAAAAAAEAAIAAAAHAAEAAAAEAAAAAAAHAAIAAAAEAAAAAAAHAAMAAAAEAAAAAAAHAAQAAAAEAAIAAAAIAAAAAAAEAAIAAAAIAAEAAAAEAAIAAAAIAAIAAAAEAAIAAAAIAAMAAAAEAAIAAAAIAAQAAAAEAAIAAAAAAAUAAAAEAAEAAAABAAUAAAAEAAEAAAACAAUAAAAEAAEAAAADAAUAAAAEAAEAAAAEAAUAAAAEAAEAAAAFAAUAAAAEAAEAAAAGAAUAAAAEAAEAAAAHAAUAAAAEAAEAAAAIAAUAAAAEAAEAAAAEAAAAAAAEAAIAAAABAAEAAAAEAAAAAAAAAAEAAAAEAAIAAAACAAEAAAAEAAAAAAADAAEAAAAEAAAAAAAEAAEAAAAEAAAAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAEAAAD//wUAAAAEAAEAAAD//wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAEAAAD///7/AAAEAAEAAAAAAP7/AAAEAAEAAAABAP7/AAAEAAEAAAACAP7/AAAEAAEAAAADAP7/AAAEAAEAAAAEAP7/AAAEAAEAAAAEAP//AAAEAAEAAAAFAP//AAAEAAEAAAAGAP//AAAEAAEAAAAHAP//AAAEAAEAAAAIAP//AAAEAAEAAAAJAP//AAAEAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAHAP7/AAAEAAEAAAAGAP7/AAAEAAEAAAAFAP7/AAAEAAEAAAACAP//AAAEAAEAAAADAP//AAAEAAEAAAABAP//AAAEAAEAAAAAAP//AAAEAAEAAAD+////AAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD8//7/AAAEAAEAAAD+//7/AAAEAAEAAAD8////AAAEAAEAAAD8/wAAAAAEAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD+/wEAAAAEAAEAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAEAAAD8/wIAAAAEAAEAAAD8/wMAAAAEAAEAAAD8/wQAAAAEAAEAAAD8/wUAAAAEAAEAAAD9/wIAAAAEAAEAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD9/wUAAAAEAAEAAAD+/wQAAAAEAAEAAAD+/wUAAAAEAAEAAAD8/wYAAAAEAAEAAAD8/wcAAAAEAAEAAAD9/wYAAAAEAAEAAAD9/wcAAAAEAAEAAAD+/wYAAAAEAAEAAAD+/wcAAAAEAAEAAAD//wYAAAAEAAEAAAD//wcAAAAEAAEAAAD8/wgAAAAEAAEAAAD9/wgAAAAEAAEAAAD+/wgAAAAEAAEAAAD//wgAAAAEAAEAAAAAAAYAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAgAAAAEAAEAAAABAAYAAAAEAAEAAAABAAcAAAAEAAEAAAABAAgAAAAEAAEAAAACAAYAAAAEAAEAAAACAAcAAAAEAAEAAAACAAgAAAAEAAEAAAADAAYAAAAEAAEAAAADAAcAAAAEAAEAAAADAAgAAAAEAAEAAAAEAAYAAAAEAAEAAAAEAAcAAAAEAAEAAAAEAAgAAAAEAAEAAAAFAAYAAAAEAAEAAAAFAAcAAAAEAAEAAAAFAAgAAAAEAAEAAAAGAAYAAAAEAAEAAAAGAAcAAAAEAAEAAAAGAAgAAAAEAAEAAAAHAAYAAAAEAAEAAAAHAAcAAAAEAAEAAAAHAAgAAAAEAAEAAAAIAAYAAAAEAAEAAAAIAAcAAAAEAAEAAAAIAAgAAAAEAAEAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAAJAAgAAAAEAAEAAAAKAAUAAAAEAAEAAAAKAAYAAAAEAAEAAAAKAAcAAAAEAAEAAAAKAAgAAAAEAAEAAAALAAUAAAAEAAEAAAALAAYAAAAEAAEAAAALAAcAAAAEAAEAAAALAAgAAAAEAAEAAAAMAAUAAAAEAAEAAAAMAAYAAAAEAAEAAAAMAAcAAAAEAAEAAAAMAAgAAAAEAAEAAAAJAP3/AAAEAAEAAAAKAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAAKAP//AAAEAAEAAAAKAAAAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAIAAAAEAAEAAAAKAAMAAAAEAAEAAAAKAAQAAAAEAAEAAAALAP3/AAAEAAEAAAALAP7/AAAEAAEAAAALAP//AAAEAAEAAAALAAAAAAAEAAEAAAALAAEAAAAEAAEAAAALAAIAAAAEAAEAAAALAAMAAAAEAAEAAAALAAQAAAAEAAEAAAAMAP3/AAAEAAEAAAAMAP7/AAAEAAEAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAEAAAAMAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAEAAAAJAPz/AAAEAAEAAAAKAPz/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAD8//z/AAAEAAEAAAD8//3/AAAEAAEAAAD9//z/AAAEAAEAAAD9//3/AAAEAAEAAAD+//z/AAAEAAEAAAD+//3/AAAEAAEAAAD///z/AAAEAAEAAAD///3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAP3/AAAEAAEAAAABAPz/AAAEAAEAAAABAP3/AAAEAAEAAAACAPz/AAAEAAEAAAACAP3/AAAEAAEAAAADAPz/AAAEAAEAAAADAP3/AAAEAAEAAAAEAPz/AAAEAAEAAAAEAP3/AAAEAAEAAAAFAPz/AAAEAAEAAAAFAP3/AAAEAAEAAAAGAPz/AAAEAAEAAAAGAP3/AAAEAAEAAAAHAPz/AAAEAAEAAAAHAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAP3/AAAEAAEAAAACAAMAAAAEAAAAAAABAAMAAAAEAAAAAAABAAIAAAAEAAAAAAAGAAEAAAAEAAAAAAA=")
 tile_set = ExtResource("1_qpfou")
 
 [node name="KingdomArea" type="TileMapLayer" parent="." unique_id=949835215 node_paths=PackedStringArray("kingdom_grid")]
 position = Vector2(128, 128)
-tile_map_data = PackedByteArray("AAADAAEAAAABAAIAAAABAAAAAAAAAAIAAAABAAIAAAAAAAMAAAAGAAAAAAAAAAYAAAAGAAIAAAADAAYAAAA=")
+tile_map_data = PackedByteArray("AAADAAIAAAABAAIAAAABAAAAAAAAAAIAAAAFAAEAAAAAAAMAAAA=")
 tile_set = ExtResource("1_qpfou")
 script = ExtResource("2_ybqp2")
 kingdom_grid = NodePath("ArenaKingdomGrid")
-debug = false
 metadata/_edit_lock_ = true
 
 [node name="ArenaKingdomGrid" type="Node2D" parent="KingdomArea" unique_id=1367400009 node_paths=PackedStringArray("kingdom_tiles")]
@@ -138,8 +141,10 @@ tile = Vector2i(3, 0)
 script = ExtResource("5_hs11j")
 play_area = NodePath("..")
 highlight_layer = NodePath("../AllegienceHighlight")
-friend_tile = Vector2i(2, 1)
-enemy_tile = Vector2i(3, 1)
+ALLY_tile = Vector2i(2, 1)
+FRIEND_tile = Vector2i(3, 2)
+DISLIKE_tile = Vector2i(3, 1)
+ENEMY_tile = Vector2i(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1065420151]
 
@@ -303,3 +308,236 @@ text = "+5"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1566446003]
 libraries/ = SubResource("AnimationLibrary_hs11j")
+
+[node name="DebugCanvas" type="CanvasLayer" parent="." unique_id=1617065865]
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugCanvas" unique_id=1048215999]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugCanvas/HBoxContainer" unique_id=1054381803]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=919709255]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Local Mouse"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label2" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=129439202]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Global mouse"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label7" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=130644790]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Kingdom:"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label3" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=505559430]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Tile from global"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label4" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=505138399]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Hovered tile"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label5" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=301490786]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "In Bounds"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label6" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer" unique_id=1733147465]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Global from tile"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DebugCanvas/HBoxContainer" unique_id=541821760]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=864981458]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label2" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=4692821]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label7" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=959520934]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label3" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=1277217697]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label4" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=1165543788]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label5" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=92879998]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="Label6" type="Label" parent="DebugCanvas/HBoxContainer/VBoxContainer2" unique_id=1547068120]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugCanvas" unique_id=2058045292]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -765.0
+offset_bottom = 85.0
+grow_horizontal = 0
+script = ExtResource("11_ngxpw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugCanvas/VBoxContainer" unique_id=1598194956]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=855322430]
+layout_mode = 2
+text = "Opinion of:"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="OpinionOf" type="ItemList" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=371124059]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_width = true
+item_count = 5
+item_0/text = "Player"
+item_1/text = "Paper"
+item_2/text = "Sun"
+item_3/text = "Ice"
+item_4/text = "Vampire"
+
+[node name="Label2" type="Label" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=1930925782]
+layout_mode = 2
+text = "About:"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="OpinionAbout" type="ItemList" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=1243775659]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_width = true
+item_count = 5
+item_0/text = "Player"
+item_1/text = "Paper"
+item_2/text = "Sun"
+item_3/text = "Ice"
+item_4/text = "Vampire"
+
+[node name="Label3" type="Label" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=2137665167]
+layout_mode = 2
+text = "Change with:"
+label_settings = ExtResource("10_8nmnw")
+
+[node name="TextEdit" type="TextEdit" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=1160150325]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="SubmitBtn" type="Button" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=537762694]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Apply oppinion"
+
+[node name="Button" type="Button" parent="DebugCanvas/VBoxContainer/HBoxContainer" unique_id=99223794]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="DiplomacyButton" type="Button" parent="DebugCanvas/VBoxContainer" unique_id=779364100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Activate Dimpolacy"
+
+[node name="Button" type="Button" parent="DebugCanvas/VBoxContainer" unique_id=1592062901]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Return to Strategy"
+
+[node name="DialogueDebug" type="HBoxContainer" parent="DebugCanvas" unique_id=567654991]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 110.0
+grow_vertical = 0
+script = ExtResource("12_trw0a")
+
+[node name="PaperButton" type="Button" parent="DebugCanvas/DialogueDebug" unique_id=856696135]
+layout_mode = 2
+text = "Talk to Paper"
+
+[node name="MoonButton" type="Button" parent="DebugCanvas/DialogueDebug" unique_id=719655965]
+layout_mode = 2
+disabled = true
+text = "Talk to Moon"
+
+[node name="CatButton" type="Button" parent="DebugCanvas/DialogueDebug" unique_id=829021231]
+layout_mode = 2
+disabled = true
+text = "Talk to Cat
+"
+
+[node name="TransitionDebug" type="HBoxContainer" parent="DebugCanvas" unique_id=887257922]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("13_tjcye")
+
+[node name="PaperTransport" type="Button" parent="DebugCanvas/TransitionDebug" unique_id=761876112]
+layout_mode = 2
+text = "Transport Paper"
+
+[node name="PaperTransport2" type="Button" parent="DebugCanvas/TransitionDebug" unique_id=2026444586]
+layout_mode = 2
+disabled = true
+text = "Transport Moon"
+
+[connection signal="item_selected" from="DebugCanvas/VBoxContainer/HBoxContainer/OpinionOf" to="DebugCanvas/VBoxContainer" method="_on_opinion_of_item_selected"]
+[connection signal="item_selected" from="DebugCanvas/VBoxContainer/HBoxContainer/OpinionAbout" to="DebugCanvas/VBoxContainer" method="_on_opinion_about_item_selected"]
+[connection signal="text_changed" from="DebugCanvas/VBoxContainer/HBoxContainer/TextEdit" to="DebugCanvas/VBoxContainer" method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="DebugCanvas/VBoxContainer/HBoxContainer/SubmitBtn" to="DebugCanvas/VBoxContainer" method="_on_submit_btn_pressed"]
+[connection signal="pressed" from="DebugCanvas/VBoxContainer/DiplomacyButton" to="DebugCanvas/VBoxContainer" method="_on_diplomacy_button_pressed"]
+[connection signal="pressed" from="DebugCanvas/DialogueDebug/PaperButton" to="DebugCanvas/DialogueDebug" method="_on_paper_button_pressed"]
+[connection signal="pressed" from="DebugCanvas/DialogueDebug/MoonButton" to="DebugCanvas/DialogueDebug" method="_on_moon_button_pressed"]
+[connection signal="pressed" from="DebugCanvas/TransitionDebug/PaperTransport" to="DebugCanvas/TransitionDebug" method="_on_paper_transport_pressed"]

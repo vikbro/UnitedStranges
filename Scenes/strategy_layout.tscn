@@ -179,7 +179,7 @@ _data = {
 
 [node name="StrategyLayout" type="Node2D" unique_id=999189916]
 script = ExtResource("1_ym7h4")
-strategy_timer = 15
+strategy_timer = 5
 
 [node name="Clouds" type="ColorRect" parent="." unique_id=572314179]
 z_index = 1
@@ -276,6 +276,31 @@ unique_name_in_owner = true
 one_shot = true
 autostart = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer2" unique_id=717875291]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer2/MarginContainer2" unique_id=314776627]
+layout_mode = 2
+text = "Strategy phase:
+
+- Look around and see who is
+ ally/enemy with who.
+
+- Click on the kingdoms for
+ more information
+
+- Wait for timer to run out and 
+enter \"Diplomacy phase\"
+
+- Become friends with everyone
+and WIN
+"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269338331]
 visible = false
 
@@ -344,6 +369,7 @@ text = "0"
 label_settings = ExtResource("6_rs4nu")
 
 [node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=711312469]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "0"

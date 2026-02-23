@@ -9,73 +9,73 @@ else:
 if {OPINIONS.werewolf_sun} <= 1:
 	king_werewolf: The Sun burns everything when he gets mad. Doesn't even think about who gets hurt.
 	- You protect people. He just releases power. That's the difference.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Yeah. Exactly. That's exactly it. You get it.
+		do DiplomacyManager.modify_opinion(0, 2, -20)
+		king_werewolf: Exactly. Power means nothing if you can't aim it.
 	- He acts fast when emotional.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Fast is fine. Careless isn't. There's a line.
+		do DiplomacyManager.modify_opinion(0, 2, 0)
+		king_werewolf: Fast. Sure. Let's call it that.
 	- Power is power. Damage happens.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [speed=0.4] …Not to me. [/speed] Damage to people means something.
+		do DiplomacyManager.modify_opinion(0, 2, 20)
+		king_werewolf: [shake rate=5.0 level=3 connected=1] Not to the people standing in the way it doesn't! [/shake]
 else:
 	king_werewolf: That jerk, the Sun King! When he cares — he cares loud. No hiding it.
 	- Honest emotion deserves respect. You understand that.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Yeah. I don't always like how he does it but… yeah. At least you know where you stand.
+		do DiplomacyManager.modify_opinion(0, 2, 20)
+		king_werewolf: Yeah. At least you know where he stands. I can work with that.
 	- He expresses himself openly.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Openly. Ha. That's one word for it.
+		do DiplomacyManager.modify_opinion(0, 2, 0)
+		king_werewolf: ...Openly. That's one word for it.
 	- That's just lack of control.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [speed=0.4] …Maybe. [/speed] But at least he's not pretending.
+		do DiplomacyManager.modify_opinion(0, 2, -20)
+		king_werewolf: [shake rate=6.0 level=3 connected=1] Control?! At least he feels something! [/shake]
 
 # CATEGORY 2: VAMPIRES
 if {OPINIONS.werewolf_vampire} <= 1:
 	king_werewolf: They smile without meaning it. Talk without saying anything real. Stupid vampires….
 	- You trust what's honest, not what's polished. That makes sense.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Exactly. Just say what you mean. Why is that so hard for them?
+		do DiplomacyManager.modify_opinion(0, 4, -20)
+		king_werewolf: Right. Give me a straight answer over a pretty one any day.
 	- They're more formal in how they speak.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Formal. Sure. If that's what we're calling it.
+		do DiplomacyManager.modify_opinion(0, 4, 0)
+		king_werewolf: Formal. Yeah. Real fancy way of saying nothing.
 	- They're just more sophisticated.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [shake rate=5.0 level=2 connected=1] Sophisticated. [/shake] Right. That's the word.
+		do DiplomacyManager.modify_opinion(0, 4, 20)
+		king_werewolf: [shake rate=7.0 level=3 connected=1] Sophisticated?! That's just a polite word for fake! [/shake]
 else:
 	king_werewolf: That vampire kingdom, damn, they have some nerve. They wait. Watch. Plan. …That takes discipline.
 	- Control like that takes real strength. You recognize it.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Don't tell them I said that. But… yeah. It does.
+		do DiplomacyManager.modify_opinion(0, 4, 20)
+		king_werewolf: Doesn't mean I like them. But yeah. Hard not to respect it.
 	- They think before acting.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Yeah. Which is more than I can say for myself sometimes.
+		do DiplomacyManager.modify_opinion(0, 4, 0)
+		king_werewolf: ...Sure do. Every single time.
 	- Sounds slow and boring.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [speed=0.4] …Ha. [/speed] Maybe. But boring keeps you alive.
+		do DiplomacyManager.modify_opinion(0, 4, -20)
+		king_werewolf: [shake rate=5.0 level=2 connected=1] Boring keeps you alive. Don't knock it. [/shake]
 
 # CATEGORY 3: PAPER
 if {OPINIONS.werewolf_paper} <= 1:
 	king_werewolf: Don't you hate the speech of these paper guys? They talk like everything is a puzzle. Not everything needs solving.
 	- Some things should just be lived, not analyzed.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Yes! Thank you! Just live it. Stop writing it down and live it.
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_werewolf: Yes! Exactly! Just do it. Stop writing about doing it.
 	- They like understanding things deeply.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Sure. Understanding is fine. Just… talk like a normal person while you do it.
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_werewolf: Deep. Sure. Very deep. Very slow.
 	- Understanding everything is important.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [speed=0.5] …You sound like them. [/speed] I mean that kindly. Mostly.
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_werewolf: [shake rate=5.0 level=3 connected=1] Not when the moment's already gone by the time you've figured it out! [/shake]
 else:
 	king_werewolf: They remember everything. That's… kind of amazing. I mean it is written on them, but still damn impressive.
 	- Memory protects the future. That's real strength.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
-		king_werewolf: Yeah. Yeah it does. Wish I was better at it honestly.
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_werewolf: Yeah. Wish my pack could hold onto things half as well.
 	- Information is helpful.
-		do DiplomacyManager.modify_opinion(0, 5, 0)
-		king_werewolf: Helpful. Sure. As long as they actually do something with it.
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_werewolf: ...Helpful. Sure. That's the word.
 	- Living in the past isn't useful.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
-		king_werewolf: [speed=0.4] …That's not what memory is. [/speed] Memory is how you don't repeat mistakes.
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_werewolf: [shake rate=5.0 level=2 connected=1] Knowing the past is how you don't repeat it! Come on! [/shake]
 
 # FAREWELL
 if {OPINIONS.werewolf_player} >= 3:

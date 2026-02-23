@@ -72,7 +72,6 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("1_bodif")
 theme_override_font_sizes/font_size = 128
-disabled = true
 text = "2"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=836804446]

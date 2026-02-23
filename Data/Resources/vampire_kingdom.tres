@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://vafu8ilvee2f" path="res://icon.svg" id="2_ioxb0"]
 [ext_resource type="Texture2D" uid="uid://cgx72evaah1yj" path="res://Assets/Banner/vampire_banner.png" id="2_ubhom"]
 [ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="3_ubhom"]
-[ext_resource type="PackedScene" uid="uid://b1600nk5h1l83" path="res://Scenes/Conference/PaperConference.tscn" id="4_ubhom"]
+[ext_resource type="PackedScene" uid="uid://ca2wtvp1ve6cq" path="res://Scenes/Conference/VampireConference.tscn" id="4_ubhom"]
 
 [resource]
 script = ExtResource("3_ubhom")
 opinions = Dictionary[int, int]({
+0: 5,
 2: -30
 })
 kingdom_type = 4

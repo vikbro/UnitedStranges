@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7eog1x1lvadq" path="res://Assets/Diplomats/Walking/Sun_king.png" id="2_gb8wn"]
 
 [node name="SunDiplomat" unique_id=1825840023 instance=ExtResource("1_gjf54")]
+collision_layer = 4
 diplomat_type = 2
 
 [node name="Sprite2D" parent="." index="0" unique_id=1696455339]

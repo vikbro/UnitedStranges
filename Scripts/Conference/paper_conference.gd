@@ -16,6 +16,7 @@ func hide_non_participating_kingdoms() -> void:
 
 	for child in npc.get_children():
 		if child is Diplomat:
-			child.visible = loaded_types.has(child.diplomat_type)
+			if !loaded_types.has(child.diplomat_type):
+				child.queue_free()
 	
 	

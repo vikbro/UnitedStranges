@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7tvhoe5ru6uk" path="res://Assets/Diplomats/Walking/Bat.png" id="2_xcadh"]
 
 [node name="VampireDiplomat" unique_id=1825840023 instance=ExtResource("1_cgpa3")]
+collision_layer = 4
 diplomat_type = 4
 
 [node name="Sprite2D" parent="." index="0" unique_id=1696455339]

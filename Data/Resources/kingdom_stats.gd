@@ -3,13 +3,13 @@ class_name KingdomStats
 
 const MIN_OP = -100
 const MAX_OP = 100
-const INFLUENCE_FACTOR := 0.01
+const INFLUENCE_FACTOR := 0.05
 
 # Can youse curve to choose this
-const ENEMY_THRESHOLD :int = -75
-const DISLIKE_THRESHOLD :int = -10
-const LIKE_THRESHOLD :int = 10
-const ALLY_THRESHOLD :int = 75
+const ENEMY_THRESHOLD :int = -11
+const DISLIKE_THRESHOLD :int = -5
+const LIKE_THRESHOLD :int = 5
+const ALLY_THRESHOLD :int = 11
 
 enum AllegienceType {ENEMY,DISLIKE,NEUTRAL,LIKE,ALLY}
 enum Type {PLAYER,PAPER,SUN,ICE,VAMPIRE,WAREWOLF} #WAREWOLF

@@ -26,16 +26,16 @@ tile_set = ExtResource("1_5h13l")
 [node name="NPC" type="Node2D" parent="." unique_id=1353365625]
 
 [node name="SunDiplomat" parent="NPC" unique_id=1825840023 instance=ExtResource("4_ial2d")]
-position = Vector2(1091, 174)
+position = Vector2(988, 144)
 
 [node name="VampireDiplomat" parent="NPC" unique_id=281642008 instance=ExtResource("5_notq1")]
 position = Vector2(-227, 738)
 
 [node name="PaperDiplomat" parent="NPC" unique_id=1662395236 instance=ExtResource("6_ygwk6")]
-position = Vector2(1638, 622)
+position = Vector2(1695, 511)
 
 [node name="WarewolfDiplomat" parent="NPC" unique_id=942068127 instance=ExtResource("6_ewcto")]
-position = Vector2(416, 865)
+position = Vector2(453, 546)
 
 [node name="CharacterBody2D" parent="." unique_id=427762135 instance=ExtResource("2_a2rcq")]
 position = Vector2(449, 380)

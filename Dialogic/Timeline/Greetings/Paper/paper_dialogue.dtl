@@ -9,24 +9,24 @@ else:
 if {OPINIONS.paper_sun} <= 1:
 	king_paper: Pray tell, doth the Kingdom of the Sun find favor in thine eyes?
 	- No, not really, I am more of an indoorsy person.
-		do DiplomacyManager.modify_opinion(0, 1, 20)
+		do DiplomacyManager.modify_opinion(0, 2, -20)
 		king_paper: A kindred spirit! The indoors doth protect mine precious pages!
 	- I haven't heard anything about that kingdom.
-		do DiplomacyManager.modify_opinion(0, 1, 0)
+		do DiplomacyManager.modify_opinion(0, 2, 0)
 		king_paper: Verily, thou art most uninformed. 'Tis perhaps for the best.
 	- Of course, it helps making a killer tan!
-		do DiplomacyManager.modify_opinion(0, 1, -20)
+		do DiplomacyManager.modify_opinion(0, 2, 20)
 		king_paper: [shake rate=5.0 level=3 connected=1] A TAN?! [/shake] Dost thou have ANY idea what the sun doth to parchment?!
 else:
 	king_paper: Hark, the sun doth shine brightly each day. 'Tis why my people may hoard knowledge and read it. Education is a boon most fair. Pray tell, do you not revel in the sun's endless gifts?
 	- I do appreciate the sunny days!
-		do DiplomacyManager.modify_opinion(0, 1, 20)
+		do DiplomacyManager.modify_opinion(0, 2, 20)
 		king_paper: Splendid! A most enlightened perspective, dear King!
 	- …
-		do DiplomacyManager.modify_opinion(0, 1, 0)
+		do DiplomacyManager.modify_opinion(0, 2, 0)
 		king_paper: [speed=0.5] ...Indeed. [/speed]
 	- Ever heard of lamps?
-		do DiplomacyManager.modify_opinion(0, 1, -20)
+		do DiplomacyManager.modify_opinion(0, 2, -20)
 		king_paper: [shake rate=10.0 level=4 connected=1] LAMPS?! [/shake] Thou wouldst replace the glory of the sun with a... a LAMP?!
 
 # CATEGORY 2: VAMPIRES
@@ -54,16 +54,16 @@ else:
 		king_paper: PRECISELY! Thou art most correct! A most ghastly kingdom indeed!
 
 # CATEGORY 3: WEREWOLVES
-if {OPINIONS.paper_warewolf} <= 1:
+if {OPINIONS.paper_werewolf} <= 1:
 	king_paper: Hark, I have heard tell of realms haunted by werewolves, wild tales indeed! How starkly they contrast with the lands of my birth!
 	- I agree, some people don't know how to keep it together.
-		do DiplomacyManager.modify_opinion(0, 5, 20)
+		do DiplomacyManager.modify_opinion(0, 5, -20)
 		king_paper: Well spoken! Dignity and composure are the marks of true nobility!
 	- Lol, aren't you noisy, Lord Papyrus!
 		do DiplomacyManager.modify_opinion(0, 5, 0)
 		king_paper: [speed=0.2] I... Lord Papyrus?... I suppose that hath a certain ring to it. [/speed]
 	- Ha, so the Kingdom of the Moon must be ashamed then.
-		do DiplomacyManager.modify_opinion(0, 5, -20)
+		do DiplomacyManager.modify_opinion(0, 5, 20)
 		king_paper: [shake rate=8.0 level=3 connected=1] The Moon Kingdom is a most honourable ally! [/shake] Thou shalt not besmirch their name!
 else:
 	king_paper: Verily, simplicity doth underpin all! Pray tell, which kingdom dost thou deem most skilled in cleanness and plainness?

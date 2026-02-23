@@ -9,73 +9,73 @@ else:
 if {OPINIONS.vampire_sun} <= 1:
 	king_vampire: The Sun calls its fury "majesty." I call it… lack of discipline.
 	- True power is controlled. Your composure proves real strength.
-		do DiplomacyManager.modify_opinion(1, 2, 20)
-		king_vampire: Precisely. You understand the distinction. I find that… refreshing.
+		do DiplomacyManager.modify_opinion(0, 2, -20)
+		king_vampire: Precisely. You understand what so few do.
 	- The Sun is just more expressive.
-		do DiplomacyManager.modify_opinion(1, 2, 0)
-		king_vampire: "Expressive." A generous word for reckless theatrics.
+		do DiplomacyManager.modify_opinion(0, 2, 0)
+		king_vampire: [speed=0.3] ...Expressive. Yes. Let us call it that. [/speed]
 	- At least the Sun is honest about what it is.
-		do DiplomacyManager.modify_opinion(1, 2, -20)
-		king_vampire: Honesty without elegance… is simply noise.
+		do DiplomacyManager.modify_opinion(0, 2, 20)
+		king_vampire: [shake rate=5.0 level=3 connected=1] Honesty without elegance is merely noise. [/shake]
 else:
 	king_vampire: Raw power is… impressive. Inelegant — but impressive.
 	- Power without refinement is still power. You recognize that wisely.
-		do DiplomacyManager.modify_opinion(1, 2, 20)
-		king_vampire: I would not say wisely. I would say… honestly.
+		do DiplomacyManager.modify_opinion(0, 2, 20)
+		king_vampire: A measured perspective. I appreciate that.
 	- It is certainly hard to ignore.
-		do DiplomacyManager.modify_opinion(1, 2, 0)
-		king_vampire: Hard to ignore. Yes. Like a fire alarm. Effective. Unsubtle.
+		do DiplomacyManager.modify_opinion(0, 2, 0)
+		king_vampire: [speed=0.4] Indeed. Hard to ignore. [/speed]
 	- Sounds like you envy him.
-		do DiplomacyManager.modify_opinion(1, 2, -20)
-		king_vampire: Envy. …Do not insult me with small words.
+		do DiplomacyManager.modify_opinion(0, 2, -20)
+		king_vampire: [shake rate=8.0 level=4 connected=1] Envy?! [/shake] I envy nothing that burns out by dusk.
 
 # CATEGORY 2: WEREWOLVES
-if {OPINIONS.vampire_warewolf} <= 1:
+if {OPINIONS.vampire_werewolf} <= 1:
 	king_vampire: What do you think of those werewolves? They live by instinct. No poise. No control. No grace.
 	- Discipline separates rulers from beasts. You embody that.
-		do DiplomacyManager.modify_opinion(1, 5, 20)
-		king_vampire: You choose your words carefully. I appreciate that in a ruler.
+		do DiplomacyManager.modify_opinion(0, 5, -20)
+		king_vampire: Well said. A ruler who cannot master themselves cannot master others.
 	- They just follow their nature.
-		do DiplomacyManager.modify_opinion(1, 5, 0)
-		king_vampire: Following nature is fine… for animals. We are expected to be more.
+		do DiplomacyManager.modify_opinion(0, 5, 0)
+		king_vampire: [speed=0.3] So does a rabid dog. [/speed]
 	- At least they're authentic.
-		do DiplomacyManager.modify_opinion(1, 5, -20)
-		king_vampire: Authentic. So is a storm. I would not crown one.
+		do DiplomacyManager.modify_opinion(0, 5, 20)
+		king_vampire: [shake rate=6.0 level=3 connected=1] Authenticity is not a virtue when it leaves claw marks on the furniture. [/shake]
 else:
 	king_vampire: Dogs… their loyalty is absolute. Primitive… but admirable.
 	- Loyalty without hesitation is rare and valuable.
-		do DiplomacyManager.modify_opinion(1, 5, 20)
-		king_vampire: Rare. Yes. You and I understand what that is worth.
+		do DiplomacyManager.modify_opinion(0, 5, 20)
+		king_vampire: Rare indeed. You have a discerning eye.
 	- They stay close to their own.
-		do DiplomacyManager.modify_opinion(1, 5, 0)
-		king_vampire: Closeness without discernment is merely… habit. But yes. There is something to it.
+		do DiplomacyManager.modify_opinion(0, 5, 0)
+		king_vampire: [speed=0.4] ...As do we all, in the end. [/speed]
 	- Blind loyalty is foolish.
-		do DiplomacyManager.modify_opinion(1, 5, -20)
-		king_vampire: Blind. …Perhaps. But it never wavers. Can you say the same?
+		do DiplomacyManager.modify_opinion(0, 5, -20)
+		king_vampire: [shake rate=5.0 level=2 connected=1] Blind?! [/shake] There is nothing blind about choosing your pack and holding fast.
 
 # CATEGORY 3: PAPER
 if {OPINIONS.vampire_paper} <= 1:
 	king_vampire: They value knowledge without beauty. Information without atmosphere.
 	- Knowledge deserves presentation worthy of its importance.
-		do DiplomacyManager.modify_opinion(1, 1, 20)
-		king_vampire: Finally. Someone who understands that form and content are inseparable.
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_vampire: Precisely. A truth spoken in a cold room carries half the weight.
 	- They focus on accuracy first.
-		do DiplomacyManager.modify_opinion(1, 1, 0)
-		king_vampire: Accuracy. Yes. A fine floor… but a poor ceiling.
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_vampire: [speed=0.3] Accuracy. How… sterile. [/speed]
 	- Facts matter more than aesthetics.
-		do DiplomacyManager.modify_opinion(1, 1, -20)
-		king_vampire: I see. We will not agree on this. Move on.
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_vampire: [shake rate=5.0 level=3 connected=1] Facts without form are merely noise dressed in ink. [/shake]
 else:
-	king_vampire: Written knowledge that endures time… that, I respect. I must admit the Paper Kingdom is powerful.
+	king_vampire: Written knowledge that endures time… that, I respect. I must admit the paper is powerful.
 	- Lasting knowledge is a form of legacy — like yours.
-		do DiplomacyManager.modify_opinion(1, 1, 20)
-		king_vampire: Legacy. Yes. That word carries weight. You wield it well.
+		do DiplomacyManager.modify_opinion(0, 1, 20)
+		king_vampire: Legacy… yes. Few understand its weight as I do.
 	- It helps future generations.
-		do DiplomacyManager.modify_opinion(1, 1, 0)
-		king_vampire: Future generations. A noble thought… if one cares for them.
+		do DiplomacyManager.modify_opinion(0, 1, 0)
+		king_vampire: [speed=0.4] Future generations. An optimistic thought. [/speed]
 	- Power matters more than memory.
-		do DiplomacyManager.modify_opinion(1, 1, -20)
-		king_vampire: Memory IS power. …Clearly we define it differently.
+		do DiplomacyManager.modify_opinion(0, 1, -20)
+		king_vampire: [shake rate=6.0 level=3 connected=1] Power without memory is a throne built on sand. [/shake]
 
 # FAREWELL
 if {OPINIONS.vampire_player} >= 3:

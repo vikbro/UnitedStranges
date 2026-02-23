@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://de8rrx1w8546p" path="res://Audio/Hover/Coffee1.mp3" id="5_d5p0i"]
 [ext_resource type="AudioStream" uid="uid://dhxgkpmydyqhw" path="res://Audio/Win/Fanfare Trumpet Victory Tune-(SoundEffectsFactory.com)_.mp3" id="6_21uwq"]
 [ext_resource type="AudioStream" uid="uid://b8k6lkb7nokm2" path="res://Audio/Music/african_drums.mp3" id="7_d5p0i"]
+[ext_resource type="AudioStream" uid="uid://drdoonqs6inbi" path="res://Audio/Win/Fanfare Trumpet Announcement-(SoundEffectsFactory.com)_.mp3" id="8_lpjqt"]
 
 [node name="Audio" type="Node" unique_id=469776343]
 script = ExtResource("1_1v8rx")
@@ -39,3 +40,8 @@ parameters/looping = true
 stream = ExtResource("6_21uwq")
 volume_db = -10.0
 pitch_scale = 0.6
+
+[node name="Intro" type="AudioStreamPlayer" parent="." unique_id=624064605]
+stream = ExtResource("8_lpjqt")
+volume_db = -10.0
+pitch_scale = 0.8

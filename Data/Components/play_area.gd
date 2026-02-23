@@ -9,6 +9,7 @@ var bounds: Rect2i
 var _selected_tile: Vector2i = Vector2i(-9999, -9999)
 
 func _ready() -> void:
+	#_load_kingdom_data()
 	Events.enter_level.connect(_load_kingdom_data)
 	Events.exit_level.connect(_unload_data)
 	#bounds = Rect2i(Vector2.ZERO, kingdom_grid.size)
@@ -17,6 +18,8 @@ func _ready() -> void:
 		#if data != null:
 			#var kingdom_data = data.get_custom_data("kingdom_data")
 			#add_kingdom(cell, kingdom_data)
+
+	pass
 	pass
 
 func _load_kingdom_data() -> void:
@@ -60,17 +63,19 @@ func _input(event: InputEvent) -> void:
 				AudioManager.zoom_out.play()
 				#Events.play_splash.emit(get_global_from_tile(get_hovered_tile()),Color.DARK_RED)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if debug:
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label".text = str(get_local_mouse_position())
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label2".text = str(get_global_mouse_position())
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label3".text = str(get_tile_from_global(get_global_mouse_position()))
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label4".text = str(get_hovered_tile())
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label5".text = str(is_tile_in_bounds(get_hovered_tile()))
-		$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label6".text = str(get_global_from_tile(get_hovered_tile()))
+		
+		%Label.text = str(get_local_mouse_position())
+		%Label2.text = str(get_global_mouse_position())
+		%Label3.text = str(get_tile_from_global(get_global_mouse_position()))
+		%Label4.text = str(get_hovered_tile())
+		%Label5.text = str(is_tile_in_bounds(get_hovered_tile()))
+		%Label6.text = str(get_global_from_tile(get_hovered_tile()))
+		
 		if current_kingdoms.has(get_hovered_tile()):
 			#$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label7"
-			$"../../CanvasLayer/HBoxContainer/VBoxContainer2/Label7".text = str(current_kingdoms[get_hovered_tile()])
+			%Label7.text = str(current_kingdoms[get_hovered_tile()])
 
 func get_tile_from_global(global: Vector2) -> Vector2i:
 	return local_to_map(to_local(global))

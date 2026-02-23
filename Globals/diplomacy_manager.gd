@@ -47,10 +47,8 @@ func _simulate_diplomacy() -> void:
 		# Pass the player's opinions dictionary
 		kingdom.calculate_player_opinion(player_kingdom.opinions)
 	DialogicManager.update_dialogic_allegiance()
-	if check_win_condition() == true:
-		Events.level_win.emit()
-	elif check_lose_condition() == true:
-		Events.level_lose.emit()
+
+	player_kingdom.opinions.clear()
 	#DialogicManager
 
 
@@ -67,6 +65,8 @@ func modify_opinion(opinon_of: KingdomStats.Type,opinion_about: KingdomStats.Typ
 
 ## Check if all kingdoms are allied with the player
 func check_win_condition() -> bool:
+	if kingdoms.size() == 0:
+		return false
 	for kingdom : KingdomStats in kingdoms.values():
 		if kingdom.kingdom_type == KingdomStats.Type.PLAYER:
 			continue
@@ -78,6 +78,8 @@ func check_win_condition() -> bool:
 
 ## Check if all kingdoms are enemies with the player
 func check_lose_condition() -> bool:
+	if kingdoms.size() == 0:
+		return false
 	for kingdom : KingdomStats in kingdoms.values():
 		if kingdom.kingdom_type == KingdomStats.Type.PLAYER:
 			continue

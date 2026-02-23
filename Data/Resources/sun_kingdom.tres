@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://e4ga76emhdtv" path="res://Assets/Banner/sun_banner.png" id="2_gb8pt"]
 [ext_resource type="Texture2D" uid="uid://c78sjj1wwpib6" path="res://Assets/Diplomats/Portait/sun_portrait.png" id="2_qwurt"]
 [ext_resource type="Script" uid="uid://c0ap6gdhqu3y3" path="res://Data/Resources/kingdom_stats.gd" id="3_gb8pt"]
-[ext_resource type="PackedScene" uid="uid://b1600nk5h1l83" path="res://Scenes/Conference/PaperConference.tscn" id="4_gb8pt"]
+[ext_resource type="PackedScene" uid="uid://isv3vid3nv5o" path="res://Scenes/Conference/SunConference.tscn" id="4_gb8pt"]
 
 [resource]
 script = ExtResource("3_gb8pt")
 opinions = Dictionary[int, int]({
+0: 5,
 1: 42
 })
 kingdom_type = 2

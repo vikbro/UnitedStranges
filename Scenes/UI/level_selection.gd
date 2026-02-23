@@ -19,7 +19,7 @@ func _on_lvl_1_pressed() -> void:
 func _on_lvl_2_pressed() -> void:
 	AudioManager.button_click.play()
 	SceneTransition.fade_to_level(STRATEGY_LAYOUT,LEVEL_2,2)
-	Events.enter_level.emit()
+	Events.transition_load.connect(Events.enter_level.emit)
 
 	#SceneTransition.fade_to_scene(LEVEL_2)
 	
