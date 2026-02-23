@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dhxgkpmydyqhw" path="res://Audio/Win/Fanfare Trumpet Victory Tune-(SoundEffectsFactory.com)_.mp3" id="6_21uwq"]
 [ext_resource type="AudioStream" uid="uid://b8k6lkb7nokm2" path="res://Audio/Music/african_drums.mp3" id="7_d5p0i"]
 [ext_resource type="AudioStream" uid="uid://drdoonqs6inbi" path="res://Audio/Win/Fanfare Trumpet Announcement-(SoundEffectsFactory.com)_.mp3" id="8_lpjqt"]
+[ext_resource type="AudioStream" uid="uid://dbda1yh7ot6h4" path="res://Audio/rohhsadotcom-015-low-impact-400103.mp3" id="9_l8f8j"]
 
 [node name="Audio" type="Node" unique_id=469776343]
 script = ExtResource("1_1v8rx")
@@ -45,3 +46,6 @@ pitch_scale = 0.6
 stream = ExtResource("8_lpjqt")
 volume_db = -10.0
 pitch_scale = 0.8
+
+[node name="LowBase" type="AudioStreamPlayer" parent="." unique_id=29960836]
+stream = ExtResource("9_l8f8j")

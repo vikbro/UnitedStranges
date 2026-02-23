@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkgur61fey7"
-path="res://.godot/imported/Normal_background_1.png-e32894d611573386dd59fadc869bb6c4.ctex"
+uid="uid://dyadjyp6jygl6"
+path="res://.godot/imported/vampire_background_3.png-734e2d9fc2c997cd5dbd468a69be8f82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/paralax_paper/Normal_background_1.png"
-dest_files=["res://.godot/imported/Normal_background_1.png-e32894d611573386dd59fadc869bb6c4.ctex"]
+source_file="res://Assets/Background/paralax_paper/vampire_background_3.png"
+dest_files=["res://.godot/imported/vampire_background_3.png-734e2d9fc2c997cd5dbd468a69be8f82.ctex"]
 
 [params]
 

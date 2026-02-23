@@ -48,6 +48,7 @@ func _ready() -> void:
 	layer_1.modulate.a = 1.0
 	layer_2.modulate.a = 0.0
 	animation_player.play("show_slogan")
+	AudioManager.low_base.play()
 	await animation_player.animation_finished
 	AudioManager.intro.play()
 

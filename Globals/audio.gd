@@ -8,6 +8,7 @@ extends Node
 @onready var lose: AudioStreamPlayer = $Lose
 @onready var african_drums: AudioStreamPlayer = $AfricanDrums
 @onready var intro: AudioStreamPlayer = $Intro
+@onready var low_base: AudioStreamPlayer = $LowBase
 
 func _ready() -> void:
 	#Events.button_click.connect(button_click.play)

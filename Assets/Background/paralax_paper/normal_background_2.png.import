@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qi6lpng1p443"
-path="res://.godot/imported/normal_background_2.png-17a7d16e6d10f927fdb01abfff06b712.ctex"
+uid="uid://bonh7j2w4flnm"
+path="res://.godot/imported/Normal_background_2.png-2148d61149f54a2db47dce311c4f74f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/paralax_paper/normal_background_2.png"
-dest_files=["res://.godot/imported/normal_background_2.png-17a7d16e6d10f927fdb01abfff06b712.ctex"]
+source_file="res://Assets/Background/paralax_paper/Normal_background_2.png"
+dest_files=["res://.godot/imported/Normal_background_2.png-2148d61149f54a2db47dce311c4f74f0.ctex"]
 
 [params]
 
